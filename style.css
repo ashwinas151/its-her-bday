@@ -1,0 +1,5648 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+#app{
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    overflow:hidden;
+}
+.scene{
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.scene-inner{
+    width:min(94vw,680px);
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+
+*{box-sizing:border-box}
+:root{
+  --pink:#ff3e9d;--hot:#ff0b78;--gold:#ffc76b;--bg:#16020d;
+  --panel:rgba(44,5,28,.72);--line:rgba(255,125,190,.28)
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050106;color:#fff;font-family:Poppins,Arial,sans-serif}
+body{
+  background:
+  radial-gradient(circle at 20% 20%,rgba(255,22,130,.16),transparent 30%),
+  radial-gradient(circle at 80% 70%,rgba(255,160,30,.13),transparent 32%),
+  linear-gradient(135deg,#13010b,#3b071e 50%,#210508);
+}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#ffd4ec;box-shadow:0 0 10px #ff63b4;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{from{opacity:.15;transform:scale(.7)}to{opacity:1;transform:scale(1.5)}}
+#scene-gift .top-title{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
+    text-align:center;
+    z-index:20;
+    font-weight:800;
+    font-size:clamp(18px,3vw,30px);
+    letter-spacing:.5px;
+    color:#fff;
+    text-shadow:0 0 8px #ff0084,0 0 20px #ff0084;
+}
+.top-title span{font-size:22px}
+.bottom-note{position:fixed;bottom:16px;left:0;right:0;text-align:center;z-index:20;color:#ff2c9b;font-weight:800;font-size:clamp(9px,1.4vw,14px);text-shadow:0 0 10px #ff007f}
+main{
+    position:fixed;
+    inset:0;
+    z-index:5;
+}
+.scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transform:translateY(14px) scale(.98);transition:opacity .7s,transform .7s}
+.scene.active{opacity:1;visibility:visible;transform:none}
+.scene-inner{width:min(94vw,680px);max-height:100%;text-align:center;padding:20px;overflow:auto}
+h2{font-family:Cinzel,Georgia,serif;font-weight:500;font-size:clamp(22px,4vw,38px);color:#ffd9b0;text-shadow:0 0 12px rgba(255,80,160,.45);margin:8px 0 10px}
+.sub{color:#eab8cf;font-size:13px;letter-spacing:.5px;margin:0 0 24px}
+.hint{color:#d98caf;font-size:12px;margin-top:10px}
+.pink-btn{border:1px solid #ff58b0;background:linear-gradient(180deg,#ff3d9c,#bc075e);color:white;border-radius:999px;padding:12px 23px;font-weight:700;cursor:pointer;box-shadow:0 0 22px rgba(255,35,142,.35);transition:.25s}
+.pink-btn:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(255,35,142,.65)}
+.gift{position:relative;width:170px;height:170px;margin:15px auto;background:none;border:0;cursor:pointer;filter:drop-shadow(0 15px 25px rgba(255,0,130,.35))}
+.gift .box{position:absolute;width:118px;height:88px;left:26px;top:62px;background:linear-gradient(135deg,#ff63ad,#d51b76);border-radius:5px}
+.gift .lid{position:absolute;width:132px;height:27px;left:19px;top:48px;background:#ff7dbc;border-radius:5px;z-index:2}
+.gift .ribbon{position:absolute;width:17px;height:115px;left:76px;top:38px;background:#ffd15f;z-index:3}
+.gift .bow{position:absolute;top:8px;left:50%;transform:translateX(-50%);font-size:48px;z-index:4}
+.gift:hover{animation:shake .45s}
+@keyframes shake{25%{transform:rotate(-4deg)}75%{transform:rotate(4deg)}}
+.code-box{width:220px;margin:auto;padding:16px;border-radius:15px;background:rgba(7,2,8,.7);border:1px solid var(--line);box-shadow:0 0 30px rgba(255,0,130,.12)}
+.dots{display:flex;justify-content:center;gap:12px;margin-bottom:14px}
+.dots i{width:10px;height:10px;border-radius:50%;border:1px solid #ff7fbd}
+.dots i.filled{background:#ff42a0;box-shadow:0 0 10px #ff42a0}
+.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.keypad button{height:38px;border:1px solid rgba(255,255,255,.12);background:#160c17;color:#fff;border-radius:8px;cursor:pointer}
+.keypad button:hover{background:#3a0d29}
+.error{height:15px;margin:8px 0 0;color:#ff79b9;font-size:10px}
+.cake{position:relative;width:230px;height:185px;margin:10px auto 20px}
+.plate{position:absolute;bottom:12px;left:8px;width:214px;height:14px;border-radius:50%;background:#ffd5e6;box-shadow:0 0 20px rgba(255,120,180,.35)}
+.tier{position:absolute;left:35px;width:160px;background:linear-gradient(#ff6cab,#d81e72);border-radius:9px;box-shadow:inset 0 -8px rgba(100,0,50,.18)}
+.tier.bottom{height:58px;bottom:28px}.tier.top{height:48px;bottom:78px;left:52px;width:126px}
+.flames{position:absolute;z-index:4;bottom:122px;left:0;right:0;display:flex;justify-content:center;gap:27px}
+.flames b{width:10px;height:20px;background:#ffd75d;border-radius:60% 60% 45% 45%;box-shadow:0 0 12px #ff8a00;animation:flicker .5s infinite alternate}
+@keyframes flicker{to{transform:scale(.75) rotate(5deg)}}
+.memory-card,.big-photo{width:min(310px,80vw);margin:15px auto 22px;background:#210a17;border:1px solid var(--line);padding:10px;border-radius:15px;box-shadow:0 15px 50px rgba(0,0,0,.45)}
+.memory-card img,.big-photo img{width:100%;height:250px;object-fit:cover;border-radius:10px}
+.image-placeholder{height:250px;display:none;align-items:center;justify-content:center;border-radius:10px;background:linear-gradient(135deg,#53203c,#1a0a13);color:#ff8bc5;font-size:12px;letter-spacing:2px}
+.memory-caption{padding:10px;color:#f4bfd8;font-size:11px}
+.balloon-area{position:relative;height:290px;width:min(500px,90vw);margin:auto}
+.balloon{position:absolute;border:0;background:none;font-size:60px;cursor:pointer;filter:drop-shadow(0 8px 15px rgba(255,50,150,.2));transition:.25s}
+.balloon:hover{transform:scale(1.12)}
+.balloon.popped{animation:pop .35s forwards}
+.b1{left:8%;top:20%}.b2{left:29%;top:0}.b3{left:51%;top:18%}.b4{left:72%;top:3%}.b5{left:18%;top:54%}.b6{left:57%;top:58%}
+@keyframes pop{to{transform:scale(1.7);opacity:0}}
+.counter{color:#ff93c7;font-size:12px}
+
+/* Image puzzle */
+.puzzle{
+    width:min(390px,82vw);
+    aspect-ratio:1/1;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr);
+    gap:3px;
+    padding:3px;
+    background:#ff4ca9;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.puzzle button{
+    width:100%;
+    height:100%;
+    border:none;
+    cursor:pointer;
+    background-image:url("1212.jpg");
+    background-repeat:no-repeat;
+    background-size:300% 300%;
+}
+
+.puzzle button.selected{
+    outline:4px solid #ffd15f;
+}
+
+
+.success{
+    min-height:20px;
+    color:#ffd06d;
+    font-size:13px;
+}
+
+/* Smaller puzzle on short screens */
+@media(max-height:750px){
+    .puzzle{
+        width:min(330px,72vw);
+        margin:12px auto;
+    }
+}
+
+@media(max-width:600px){
+    .puzzle{
+        width:min(320px,88vw);
+        margin:14px auto;
+    }
+}
+.letter{width:min(560px,92vw);margin:18px auto;padding:28px 30px;text-align:left;border:1px solid rgba(255,190,120,.25);background:linear-gradient(135deg,rgba(64,17,37,.9),rgba(30,5,20,.9));border-radius:13px;box-shadow:0 20px 70px rgba(0,0,0,.45);color:#f6d9e5;font-family:Georgia,serif;font-size:14px;line-height:1.8}
+.letter p{margin:0 0 13px}.signature{color:#ff94c6;text-align:right}
+.end .big-heart{font-size:82px;animation:heartbeat 1.2s infinite;filter:drop-shadow(0 0 25px #ff007f)}
+@keyframes heartbeat{50%{transform:scale(1.16)}}
+.end h2{font-size:clamp(30px,6vw,52px)}.end h2 em{color:#ff72b7}.end p{color:#e5b8cf;font-size:13px;max-width:450px;margin:10px auto}.sparkle-line{color:#ffc76b;letter-spacing:12px;margin-top:25px}
+.music{position:fixed;right:18px;bottom:14px;z-index:30;width:38px;height:38px;border-radius:50%;border:1px solid #ff4da7;background:#2c071d;color:#fff;cursor:pointer}
+@media(max-width:600px){
+
+    main{
+        top:0;
+    }
+
+    .scene-inner{
+        padding:10px;
+    }
+
+    .letter{
+        font-size:13px;
+        padding:22px;
+    }
+
+    .puzzle{
+        width:235px;
+        height:235px;
+    }
+
+    .balloon{
+        font-size:48px;
+    }
+
+    .bottom-note{
+        font-size:8px;
+    }
+}
+
+html,
+body{
+    overflow:hidden !important;
+    width:100%;
+    height:100%;
+}
+
+main,
+#app,
+.scene {
+    overflow: hidden;
+}
+
+.scene-inner {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide all scrollbars */
+::-webkit-scrollbar{
+    width:0;
+    height:0;
+    display:none;
+}
+
+*{
+    scrollbar-width:none;      /* Firefox */
+    -ms-overflow-style:none;   /* IE/Edge */
+}
+
+.heart-particle{
+    position:absolute;
+    font-size:18px;
+    pointer-events:none;
+    animation:flyHeart 2s linear forwards;
+    z-index:100;
+}
+
+@keyframes flyHeart{
+    0%{
+        transform:translateY(0) scale(0.5);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-250px) scale(1.5);
+        opacity:0;
+    }
+}
+
+.countdown{
+    margin-top:10px;
+    font-size:18px;
+    font-weight:bold;
+    color:#ffd15f;
+    text-shadow:0 0 10px #ffb347;
+}
+
+.gift-message{
+    margin-top:10px;
+    min-height:25px;
+    color:#ff9ccf;
+    font-size:14px;
+    font-weight:600;
+}
+
+.kiss-emoji{
+    position:fixed;
+    font-size:24px;
+    pointer-events:none;
+    z-index:9999;
+    animation:kissFly 1.5s ease-out forwards;
+}
+
+@keyframes kissFly{
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(0.5);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-120px) scale(1.5);
+    }
+}
+
+.password-heart{
+    position:fixed;
+    pointer-events:none;
+    z-index:9999;
+    animation:heartFloat 5s linear forwards;
+}
+
+@keyframes heartFloat{
+    0%{
+        opacity:0;
+        transform:translateY(200px) scale(0.5);
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-100vh) scale(1.8);
+    }
+}
+
+.flower{
+    position:fixed;
+    pointer-events:none;
+    z-index:9999;
+    animation:flowerFall 5s linear forwards;
+}
+
+@keyframes flowerFall{
+    0%{
+        opacity:1;
+        transform:translateY(-50px) rotate(0deg);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(100vh) rotate(720deg);
+    }
+}
+
+/* =========================================================
+   SCRATCH CARD
+========================================================= */
+
+.scratch-card {
+    position: relative;
+
+    width: min(380px, 82vw);
+    aspect-ratio: 1 / 1;
+
+    margin: 20px auto;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #222;
+}
+
+
+/* IMAGE - BOTTOM LAYER */
+
+#scratchImage {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    z-index: 1;
+
+    border-radius: inherit;
+}
+
+
+/* CANVAS - TOP LAYER */
+
+#scratchCanvas {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    opacity: 1;
+    visibility: visible;
+
+    z-index: 100;
+
+    border-radius: inherit;
+
+    cursor: crosshair;
+
+    touch-action: none;
+
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+#scratchNextBtn {
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   ENVELOPE SEAL GAME
+========================================================= */
+
+.envelope-game {
+    position: relative;
+
+    width: min(390px, 84vw);
+    height: 320px;
+
+    margin: 12px auto 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    perspective: 1200px;
+}
+
+
+/* Main envelope */
+
+.envelope-body {
+    position: relative;
+
+    width: 100%;
+    height: 230px;
+
+    border-radius: 12px;
+
+    transform-style: preserve-3d;
+
+    filter:
+        drop-shadow(0 20px 30px rgba(0, 0, 0, 0.45));
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+/* Envelope background */
+
+.envelope-back {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffabc9,
+            #ff6ca9
+        );
+
+    border: 2px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 12px;
+
+    z-index: 1;
+}
+
+
+/* Inner paper visible before opening */
+
+.envelope-paper {
+    position: absolute;
+
+    left: 7%;
+    bottom: 10px;
+
+    width: 86%;
+    height: 82%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff8ed,
+            #ffe8da
+        );
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 15px rgba(0, 0, 0, 0.18);
+
+    z-index: 2;
+
+    transition:
+        transform 1s ease;
+}
+
+
+/* Triangular envelope flap */
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ff83b7,
+            #d91b73
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 62%
+        );
+
+    border-radius: 12px;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    transform-origin: top center;
+
+    transition:
+        transform 1s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+}
+
+
+/* Wax seal */
+
+.wax-seal {
+    position: absolute;
+
+    left: 50%;
+    top: 44%;
+
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 32% 28%,
+            #ff7a9c,
+            #c90745 55%,
+            #760223
+        );
+
+    border: 4px double rgba(255, 213, 150, 0.7);
+
+    box-shadow:
+        0 6px 18px rgba(83, 0, 23, 0.55),
+        inset 0 3px 7px rgba(255, 255, 255, 0.35),
+        0 0 24px rgba(255, 40, 125, 0.45);
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    z-index: 20;
+
+    pointer-events: auto;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.55s ease,
+        filter 0.25s ease;
+}
+
+.envelope-back,
+.envelope-paper {
+    pointer-events: none;
+}
+/* Seal hover */
+
+.wax-seal:hover {
+    filter: brightness(1.12);
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.06);
+}
+.envelope-letter {
+    pointer-events: none;
+}
+
+.envelope-game.opened .envelope-letter {
+    pointer-events: auto;
+}
+
+/* Seal tap animation */
+
+.wax-seal.seal-hit {
+    animation:
+        sealHit 0.35s ease;
+}
+
+
+@keyframes sealHit {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    35% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.82)
+            rotate(-6deg);
+    }
+
+    70% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.12)
+            rotate(5deg);
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+}
+
+
+/* Small crack lines */
+
+.seal-crack {
+    position: absolute;
+
+    width: 3px;
+    height: 30px;
+
+    background: #61001d;
+
+    border-radius: 999px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 9;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+
+.seal-crack-one {
+    top: 41%;
+    left: 49%;
+
+    transform:
+        rotate(35deg);
+}
+
+
+.seal-crack-two {
+    top: 43%;
+    left: 53%;
+
+    transform:
+        rotate(-28deg);
+}
+
+
+/* First crack */
+
+.envelope-game.crack-one
+.seal-crack-one {
+    opacity: 1;
+}
+
+
+/* Second crack */
+
+.envelope-game.crack-two
+.seal-crack-two {
+    opacity: 1;
+}
+
+
+/* Hidden message/photo */
+
+.envelope-letter {
+    position: absolute;
+
+    left: 8%;
+    bottom: 30px;
+
+    width: 84%;
+    height: 245px;
+
+    padding: 14px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf1,
+            #ffe5dc
+        );
+
+    color: #82214e;
+
+    border:
+        1px solid rgba(255, 100, 160, 0.3);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.38);
+
+    opacity: 0;
+
+    transform:
+        translateY(100px)
+        scale(0.92);
+
+    z-index: 3;
+
+    transition:
+        transform 1.2s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        ),
+        opacity 0.7s ease;
+}
+
+
+.envelope-photo {
+    width: 120px;
+    height: 120px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        4px solid #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(190, 30, 100, 0.3);
+
+    margin-bottom: 12px;
+}
+
+
+.envelope-letter p {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* Envelope opened */
+
+.envelope-game.opened
+.envelope-flap {
+    transform:
+        rotateX(180deg);
+
+    z-index: 0;
+}
+
+
+.envelope-game.opened
+.wax-seal {
+    opacity: 0;
+
+    transform:
+        translate(-50%, 60px)
+        scale(0.2)
+        rotate(40deg);
+
+    pointer-events: none;
+}
+
+
+.envelope-game.opened
+.envelope-letter {
+    opacity: 1;
+
+    transform:
+        translateY(-105px)
+        scale(1);
+
+    z-index: 10;
+}
+
+
+.envelope-game.opened
+.envelope-paper {
+    transform:
+        translateY(-35px);
+}
+
+
+/* Counter */
+
+.seal-counter {
+    min-height: 24px;
+
+    margin: 2px 0 12px;
+
+    color: #ffb7d7;
+
+    font-size: 13px;
+
+    text-shadow:
+        0 0 12px rgba(255, 40, 140, 0.6);
+}
+
+
+/* Keep Going button */
+
+.envelope-next-btn.show-envelope-button {
+    display: inline-block !important;
+
+    animation:
+        envelopeButtonReveal 0.8s ease both;
+}
+
+
+@keyframes envelopeButtonReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* Seal particles */
+
+.seal-particle {
+    position: fixed;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    animation:
+        sealParticleFly 1.1s ease-out forwards;
+}
+
+
+@keyframes sealParticleFly {
+
+    from {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(0.5);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--seal-x),
+                var(--seal-y)
+            )
+            scale(1.5)
+            rotate(180deg);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .envelope-game {
+        width: min(330px, 88vw);
+        height: 290px;
+    }
+
+    .envelope-body {
+        height: 200px;
+    }
+
+    .envelope-letter {
+        height: 220px;
+    }
+
+    .envelope-game.opened
+    .envelope-letter {
+        transform:
+            translateY(-85px)
+            scale(1);
+    }
+
+    .wax-seal {
+        width: 64px;
+        height: 64px;
+
+        font-size: 27px;
+    }
+}
+
+
+/* Short screens */
+
+@media (max-width: 600px) {
+
+    #scene-candles .scene-inner {
+        padding: 8px;
+    }
+
+    #scene-candles h2 {
+        margin-bottom: 5px;
+    }
+
+    #scene-candles .sub {
+        margin-bottom: 8px;
+    }
+
+    .birthday-22 {
+        width: min(270px, 86vw);
+        height: 165px;
+
+        gap: 4px;
+
+        margin: 5px auto 2px;
+    }
+
+    .number-candle {
+        width: 90px;
+        height: 150px;
+    }
+
+    .candle-number {
+        font-size: 120px;
+
+        -webkit-text-stroke:
+            2px #ffd47a;
+    }
+
+    .number-wick {
+        top: 12px;
+        height: 16px;
+    }
+
+    .number-flame {
+        top: -10px;
+
+        width: 18px;
+        height: 29px;
+    }
+
+    .candle-counter {
+        margin: 2px 0 4px;
+    }
+
+    .wish-stars {
+        font-size: 18px;
+    }
+
+    .wish-reveal h3 {
+        font-size: 16px;
+    }
+
+    .wish-reveal p {
+        font-size: 10px;
+    }
+
+    #blowCandlesBtn {
+        padding: 6px 13px;
+
+        font-size: 11px;
+
+        margin-top: 3px;
+    }
+}
+
+
+/* =========================================================
+   HEART COMBINATION SAFE
+========================================================= */
+
+.safe-clue {
+    margin-bottom: 8px;
+
+    color: #ffc3df;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+}
+
+
+.heart-safe {
+    position: relative;
+
+    width: min(500px, 86vw);
+    height: 300px;
+
+    margin: 8px auto 10px;
+
+    perspective: 1200px;
+}
+
+
+/* =========================================================
+   SAFE DOOR
+========================================================= */
+
+.safe-door {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #591439,
+            #220717 70%
+        );
+
+    border:
+        2px solid rgba(
+            255,
+            100,
+            180,
+            0.45
+        );
+
+    border-radius: 28px;
+
+    box-shadow:
+        inset 0 0 35px rgba(
+            255,
+            70,
+            160,
+            0.15
+        ),
+        0 20px 55px rgba(
+            0,
+            0,
+            0,
+            0.55
+        ),
+        0 0 30px rgba(
+            255,
+            30,
+            130,
+            0.18
+        );
+
+    z-index: 5;
+
+    transform-origin: left center;
+
+    transition:
+        transform 1.1s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        ),
+        opacity 0.8s ease;
+}
+
+
+.safe-title {
+    margin-bottom: 22px;
+
+    color: #ffd3a1;
+
+    font-family:
+        Cinzel,
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 14px rgba(
+            255,
+            70,
+            150,
+            0.65
+        );
+}
+
+
+/* =========================================================
+   SAFE DIALS
+========================================================= */
+
+.safe-dials {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin-bottom: 22px;
+}
+
+
+.safe-dial {
+    height: 70px;
+
+    border:
+        1px solid rgba(
+            255,
+            150,
+            205,
+            0.45
+        );
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2c0b20,
+            #11040d
+        );
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 0 14px rgba(
+            255,
+            50,
+            150,
+            0.15
+        ),
+        0 8px 18px rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+
+    transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.safe-dial:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #ff75ba;
+
+    box-shadow:
+        0 0 22px rgba(
+            255,
+            60,
+            160,
+            0.45
+        );
+}
+
+
+.safe-dial.dial-spin {
+    animation:
+        dialSpin 0.28s ease;
+}
+
+
+@keyframes dialSpin {
+
+    0% {
+        transform:
+            rotateX(0deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            rotateX(90deg)
+            scale(0.85);
+    }
+
+    100% {
+        transform:
+            rotateX(0deg)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   UNLOCK BUTTON
+========================================================= */
+
+.safe-unlock-btn {
+    border:
+        1px solid #ff65b0;
+
+    border-radius: 999px;
+
+    padding:
+        10px 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ff439f,
+            #b7075c
+        );
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.safe-unlock-btn:hover {
+    transform:
+        scale(1.05);
+
+    box-shadow:
+        0 0 24px rgba(
+            255,
+            55,
+            150,
+            0.55
+        );
+}
+
+
+.safe-message {
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    color: #ffafd2;
+
+    font-size: 12px;
+}
+
+
+/* Wrong combination */
+
+.heart-safe.wrong-safe
+.safe-door {
+    animation:
+        safeShake 0.45s ease;
+}
+
+
+@keyframes safeShake {
+
+    0%,
+    100% {
+        transform:
+            translateX(0);
+    }
+
+    25% {
+        transform:
+            translateX(-10px);
+    }
+
+    50% {
+        transform:
+            translateX(10px);
+    }
+
+    75% {
+        transform:
+            translateX(-6px);
+    }
+}
+
+
+/* =========================================================
+   TREASURE INSIDE
+========================================================= */
+
+.safe-treasure {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+    padding: 10px 14px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #54162f 0%,
+            #260816 55%,
+            #13040b 100%
+        );
+
+    border: 1px solid rgba(255, 110, 175, 0.45);
+
+    border-radius: 28px;
+
+    box-shadow:
+        inset 0 0 35px rgba(255, 80, 160, 0.08),
+        0 18px 45px rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(0.92);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s ease;
+
+    z-index: 2;
+}
+
+
+/* Golden glow behind photo */
+
+.safe-glow {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 280px;
+    height: 280px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 195, 90, 0.30),
+            rgba(255, 100, 150, 0.08) 48%,
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* Full treasure photo */
+.safe-treasure img {
+    position: relative;
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 90%;
+    max-height: 230px;
+
+    object-fit: contain;
+    object-position: center;
+
+    flex-shrink: 1;
+
+    border-radius: 15px;
+
+    border: 3px solid rgba(255, 215, 150, 0.9);
+
+    box-shadow:
+        0 0 28px rgba(255, 180, 80, 0.4);
+
+    z-index: 3;
+}
+
+
+/* Message below photo */
+
+.safe-treasure p {
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0 5px;
+
+    color: #ffd7e8;
+
+    font-size: 12px;
+    line-height: 1.25;
+
+    text-align: center;
+
+    flex-shrink: 0;
+
+    z-index: 3;
+}
+
+/* =========================================================
+   OPEN SAFE
+========================================================= */
+
+.heart-safe.safe-open .safe-door {
+    transform:
+        translateX(-100%)
+        rotateY(-72deg);
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.heart-safe.safe-open .safe-treasure {
+    opacity: 1;
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .heart-safe {
+        width: min(340px, 90vw);
+        height: 280px;
+    }
+
+    .safe-dial {
+        height: 60px;
+        font-size: 26px;
+    }
+
+    .safe-dials {
+        gap: 7px;
+    }
+
+    .safe-treasure {
+    padding: 8px 10px;
+    gap: 5px;
+}
+
+    .safe-treasure img {
+    width: auto;
+    height: auto;
+
+    max-width: 90%;
+    max-height: 205px;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+    .safe-treasure p {
+        font-size: 12px;
+        line-height: 1.35;
+    }
+}
+/*sample*/
+#scene-heart-safe .scene-inner {
+    justify-content: center;
+    overflow: hidden !important;
+}
+#scene-heart-safe .sub {
+    margin-bottom: 10px;
+}
+
+#scene-heart-safe h2 {
+    flex-shrink: 0;
+}
+
+#scene-heart-safe .sub,
+#scene-heart-safe .safe-clue,
+#scene-heart-safe #safeNextBtn {
+    flex-shrink: 0;
+}
+#scene-heart-safe #safeNextBtn {
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   22ND BIRTHDAY CANDLE GAME
+========================================================= */
+
+#scene-candles .scene-inner {
+    overflow: hidden !important;
+}
+
+
+/* 22 container */
+
+.birthday-22 {
+    position: relative;
+
+    width: min(320px, 86vw);
+    height: 190px;
+
+    margin: 8px auto 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: 10px;
+}
+
+/* Individual number candle */
+
+.number-candle {
+    position: relative;
+
+    width: 105px;
+    height: 175px;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+.number-candle:hover {
+    transform:
+        translateY(-5px)
+        scale(1.04);
+}
+
+
+/* =========================================================
+   NUMBER 2
+========================================================= */
+
+.candle-number {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 140px;
+    font-weight: 900;
+    line-height: 1;
+
+    color: #ff4da6;
+
+    -webkit-text-stroke:
+        2px #ffd47a;
+
+    text-shadow:
+        0 0 8px #ff278d,
+        0 0 18px rgba(255, 50, 150, 0.65),
+        0 8px 20px rgba(0, 0, 0, 0.30);
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    z-index: 2;
+}
+
+
+/* Give second 2 a slightly different color */
+
+.number-candle:nth-child(2)
+.candle-number {
+    color: #ff75bf;
+
+    -webkit-text-stroke:
+        3px #ffd47a;
+}
+
+
+/* =========================================================
+   WICK
+========================================================= */
+
+.number-wick {
+    position: absolute;
+
+    top: 14px;
+    left: 50%;
+
+    width: 3px;
+    height: 18px;
+
+    transform: translateX(-50%);
+
+    background: #382018;
+
+    border-radius: 999px;
+
+    z-index: 4;
+}
+
+
+/* =========================================================
+   FLAME
+========================================================= */
+
+.number-flame {
+    position: absolute;
+
+    top: -12px;
+    left: 50%;
+
+    width: 20px;
+    height: 32px;
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
+    transform-origin: center bottom;
+
+    opacity: 0;
+
+    border-radius:
+        60% 60% 45% 45%;
+
+    background:
+        radial-gradient(
+            ellipse at bottom,
+            #ffffff 0%,
+            #fff6a2 20%,
+            #ffd52f 44%,
+            #ff861c 72%,
+            #ff4900 100%
+        );
+
+    box-shadow:
+        0 0 8px #fff5aa,
+        0 0 16px #ffbd27,
+        0 0 28px rgba(255, 90, 20, 0.72);
+
+    z-index: 5;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+/* Candle lit */
+
+.number-candle.lit
+.number-flame {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        scale(1);
+
+    animation:
+        birthday22Flame
+        0.55s
+        infinite alternate;
+}
+
+
+.number-candle.lit
+.candle-number {
+    filter:
+        drop-shadow(
+            0 0 16px
+            rgba(255, 170, 50, 0.8)
+        );
+}
+
+
+@keyframes birthday22Flame {
+
+    0% {
+        transform:
+            translateX(-50%)
+            scale(0.90)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            scale(1.08, 0.93)
+            rotate(2deg);
+    }
+
+    100% {
+        transform:
+            translateX(-50%)
+            scale(0.95, 1.08)
+            rotate(-1deg);
+    }
+}
+
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+.candle-counter {
+    min-height: 24px;
+
+    margin: 4px 0 8px;
+
+    color: #ffc8df;
+
+    font-size: 13px;
+
+    text-shadow:
+        0 0 12px
+        rgba(255, 80, 160, 0.5);
+}
+
+
+/* =========================================================
+   WISH
+========================================================= */
+
+.wish-reveal {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(12px)
+        scale(0.95);
+
+    transition:
+        max-height 0.6s ease,
+        opacity 0.6s ease,
+        transform 0.6s ease;
+
+    pointer-events: none;
+}
+
+
+.wish-reveal.visible {
+    max-height: 110px;
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    margin-bottom: 7px;
+}
+
+
+.wish-stars {
+    font-size: 23px;
+
+    letter-spacing: 8px;
+
+    animation:
+        birthdayWishGlow
+        1.2s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes birthdayWishGlow {
+
+    from {
+        opacity: 0.5;
+
+        transform:
+            scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1.08);
+    }
+}
+
+
+.wish-reveal h3 {
+    margin: 2px 0 3px;
+
+    font-family:
+        Cinzel,
+        Georgia,
+        serif;
+
+    color: #ffd39e;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    text-shadow:
+        0 0 12px rgba(255, 175, 70, 0.6);
+}
+
+
+.wish-reveal p {
+    margin: 0;
+
+    color: #eab8cf;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   BLOW FLAME OUT
+========================================================= */
+
+.number-candle.blown
+.number-flame {
+    animation:
+        birthday22FlameOut
+        0.65s
+        forwards;
+}
+
+
+@keyframes birthday22FlameOut {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    45% {
+        opacity: 0.7;
+
+        transform:
+            translateX(-10%)
+            translateY(-10px)
+            rotate(30deg)
+            scale(0.7);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateX(60px)
+            translateY(-30px)
+            scale(0);
+    }
+}
+
+
+/* =========================================================
+   SMOKE
+========================================================= */
+
+.candle-smoke {
+    position: fixed;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            230,
+            225,
+            235,
+            0.7
+        );
+
+    filter:
+        blur(5px);
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    animation:
+        birthdaySmokeRise
+        1.6s
+        ease-out
+        forwards;
+}
+
+
+@keyframes birthdaySmokeRise {
+
+    from {
+        opacity: 0.75;
+
+        transform:
+            translate(0, 0)
+            scale(0.7);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--smoke-x),
+                -100px
+            )
+            scale(2.5);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .birthday-22 {
+        width: min(270px, 86vw);
+        height: 165px;
+        gap: 4px;
+        margin: 5px auto 2px;
+    }
+
+    .number-candle {
+        width: 90px;
+        height: 150px;
+    }
+
+    .candle-number {
+        font-size: 120px;
+        -webkit-text-stroke: 2px #ffd47a;
+    }
+
+    .number-wick {
+        top: 12px;
+        height: 16px;
+    }
+
+    .number-flame {
+        top: -10px;
+        width: 18px;
+        height: 29px;
+    }
+}
+/* Small Blow The Candles button */
+#blowCandlesBtn {
+    width: auto;
+
+    min-width: 0;
+
+    padding: 7px 15px;
+
+    margin-top: 4px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#blowCandlesBtn:hover {
+    transform: translateY(-1px) scale(1.03);
+
+    box-shadow:
+        0 0 18px rgba(255, 35, 142, 0.5);
+}
+
+/* =========================================================
+   CATCH THE FALLING STARS
+========================================================= */
+
+#scene-stars-game .scene-inner {
+    width: min(94vw, 680px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    overflow: hidden !important;
+}
+
+#scene-stars-game h2 {
+    margin: 0 0 8px;
+}
+
+#scene-stars-game .sub {
+    margin: 0 0 10px;
+}
+
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+.star-game-counter {
+    min-height: 25px;
+    margin: 0 0 10px;
+    color: #ffd76a;
+    font-size: 15px;
+    font-weight: 700;
+
+    text-shadow:
+        0 0 8px #ffbf32,
+        0 0 18px rgba(255, 170, 30, 0.65);
+}
+
+
+/* =========================================================
+   GAME AREA
+========================================================= */
+
+.falling-stars-area {
+    position: relative;
+
+    width: min(500px, 88vw);
+    height: 320px;
+
+    margin: 4px auto 12px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 180, 90, 0.4);
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255, 60, 150, 0.22),
+            transparent 55%
+        ),
+        radial-gradient(
+            circle at 20% 25%,
+            rgba(255, 218, 100, 0.10),
+            transparent 25%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(14, 2, 22, 0.8),
+            rgba(55, 5, 35, 0.9)
+        );
+
+    box-shadow:
+        inset 0 0 40px rgba(255, 100, 175, 0.1),
+        0 15px 45px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   GAME MESSAGE
+========================================================= */
+
+.stars-game-message {
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+    bottom: 12px;
+
+    margin: 0;
+
+    color: #eebbd3;
+
+    font-size: 11px;
+    line-height: 1.4;
+
+    text-align: center;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   FALLING STAR
+========================================================= */
+
+.catch-star {
+    position: absolute;
+
+    top: -60px;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+
+    filter:
+        drop-shadow(0 0 7px #ffe96b)
+        drop-shadow(0 0 16px #ff9d2e);
+
+    z-index: 10;
+
+    animation:
+        fallingMagicStar
+        var(--fall-duration, 4s)
+        linear
+        forwards;
+}
+
+
+/* =========================================================
+   STAR FALL ANIMATION
+========================================================= */
+
+@keyframes fallingMagicStar {
+
+    0% {
+        top: -60px;
+        opacity: 0;
+
+        transform:
+            rotate(0deg)
+            scale(0.75);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        top: calc(100% + 10px);
+        opacity: 0;
+
+        transform:
+            rotate(360deg)
+            scale(1.1);
+    }
+}
+
+
+/* =========================================================
+   CAUGHT STAR
+========================================================= */
+
+.catch-star.star-caught {
+    pointer-events: none;
+
+    animation:
+        caughtMagicStar
+        0.45s
+        ease-out
+        forwards !important;
+}
+
+
+@keyframes caughtMagicStar {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.9)
+            rotate(90deg);
+
+        filter:
+            drop-shadow(0 0 15px white)
+            drop-shadow(0 0 30px #ffd84f);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            scale(2.7)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================================================
+   SMALL PARTICLES
+========================================================= */
+
+.star-catch-particle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    font-size: 17px;
+
+    animation:
+        starCatchParticle
+        0.9s
+        ease-out
+        forwards;
+}
+
+
+@keyframes starCatchParticle {
+
+    from {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(0.5);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--particle-x),
+                var(--particle-y)
+            )
+            scale(1.5)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================================================
+   FINAL 5TH STAR EXPLOSION
+========================================================= */
+
+.final-star-sparkle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    font-size: 22px;
+
+    animation:
+        finalStarExplosion
+        1.3s
+        ease-out
+        forwards;
+}
+
+
+@keyframes finalStarExplosion {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(0.3);
+    }
+
+    65% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--explosion-x),
+                var(--explosion-y)
+            )
+            scale(2)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   COMPLETED GAME GLOW
+========================================================= */
+
+.falling-stars-area.stars-complete {
+    animation:
+        starGameCompleteGlow
+        1.2s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes starGameCompleteGlow {
+
+    from {
+        border-color:
+            rgba(255, 195, 90, 0.45);
+
+        box-shadow:
+            inset 0 0 30px rgba(255, 200, 70, 0.1),
+            0 0 15px rgba(255, 175, 70, 0.25);
+    }
+
+    to {
+        border-color:
+            rgba(255, 225, 130, 0.9);
+
+        box-shadow:
+            inset 0 0 55px rgba(255, 200, 70, 0.2),
+            0 0 45px rgba(255, 190, 70, 0.7);
+    }
+}
+
+
+/* =========================================================
+   CONTINUE BUTTON
+========================================================= */
+
+.stars-next-btn {
+    margin-top: 2px;
+}
+
+.stars-next-btn.show-stars-button {
+    display: inline-block !important;
+
+    animation:
+        starsButtonAppear
+        0.7s
+        ease
+        both;
+}
+
+
+@keyframes starsButtonAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #scene-stars-game .scene-inner {
+        padding: 8px;
+    }
+
+    #scene-stars-game h2 {
+        margin-bottom: 7px;
+
+        font-size:
+            clamp(23px, 7vw, 31px);
+    }
+
+    #scene-stars-game .sub {
+        margin-bottom: 8px;
+        font-size: 11px;
+    }
+
+    .star-game-counter {
+        margin-bottom: 7px;
+        font-size: 13px;
+    }
+
+    .falling-stars-area {
+        width: min(340px, 90vw);
+        height: 280px;
+
+        margin-bottom: 8px;
+    }
+
+    .catch-star {
+        width: 56px;
+        height: 56px;
+
+        font-size: 36px;
+    }
+
+    .stars-next-btn {
+        padding: 9px 18px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   SHORT SCREEN
+========================================================= */
+
+@media (max-height: 720px) {
+
+    #scene-stars-game .scene-inner {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    #scene-stars-game h2 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    #scene-stars-game .sub {
+        margin-bottom: 6px;
+    }
+
+    .star-game-counter {
+        margin-bottom: 5px;
+    }
+
+    .falling-stars-area {
+        height: 250px;
+
+        margin-top: 2px;
+        margin-bottom: 7px;
+    }
+}
+
+
+/* =========================================================
+   MAGIC FLOWER GAME
+========================================================= */
+
+#scene-flower-game .scene-inner {
+    width: min(94vw, 680px);
+    height: 100%;
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden !important;
+}
+
+#scene-flower-game h2 {
+    margin: 0 0 8px;
+}
+
+#scene-flower-game .sub {
+    margin: 0 0 12px;
+}
+
+
+/* =========================================================
+   FLOWER GRID
+========================================================= */
+
+.magic-flower-area {
+    width: min(430px, 88vw);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin: 5px auto 12px;
+    padding: 15px;
+
+    border: 1px solid rgba(255, 120, 185, 0.38);
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 55, 145, 0.18),
+            rgba(25, 3, 18, 0.82)
+        );
+
+    box-shadow:
+        inset 0 0 30px rgba(255, 90, 160, 0.08),
+        0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   FLOWER BUTTONS
+========================================================= */
+
+.magic-flower {
+    height: 75px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255, 160, 210, 0.30);
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(70, 12, 45, 0.9),
+            rgba(25, 4, 18, 0.95)
+        );
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    touch-action: manipulation;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.magic-flower:hover {
+    transform: translateY(-4px) scale(1.07);
+
+    box-shadow:
+        0 0 22px rgba(255, 80, 165, 0.50);
+}
+
+
+/* =========================================================
+   WRONG FLOWER
+========================================================= */
+
+.magic-flower.flower-wrong {
+    animation: wrongFlowerShake 0.4s ease;
+}
+
+
+@keyframes wrongFlowerShake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform:
+            translateX(-7px)
+            rotate(-4deg);
+    }
+
+    50% {
+        transform:
+            translateX(7px)
+            rotate(4deg);
+    }
+
+    75% {
+        transform:
+            translateX(-4px);
+    }
+}
+
+
+/* =========================================================
+   CORRECT FLOWER BLOOM
+========================================================= */
+
+.magic-flower.magic-found {
+    z-index: 20;
+
+    animation:
+        magicFlowerBloom
+        0.9s ease forwards;
+}
+
+
+@keyframes magicFlowerBloom {
+
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform:
+            scale(1.35)
+            rotate(-8deg);
+    }
+
+    70% {
+        transform:
+            scale(1.6)
+            rotate(8deg);
+
+        filter:
+            drop-shadow(0 0 20px #ff6eb9)
+            drop-shadow(0 0 35px #ffd86d);
+    }
+
+    100% {
+        transform:
+            scale(1.4)
+            rotate(0deg);
+
+        filter:
+            drop-shadow(0 0 18px #ff6eb9)
+            drop-shadow(0 0 30px #ffd86d);
+    }
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.magic-flower-message {
+    min-height: 22px;
+
+    margin: 0 0 7px;
+
+    color: #ffc2df;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HIDDEN PHOTO
+========================================================= */
+
+.magic-flower-reveal {
+    position: relative;
+
+    width: min(240px, 70vw);
+
+    max-height: 0;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(12px)
+        scale(0.85);
+
+    transition:
+        max-height 0.7s ease,
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+
+.magic-flower-reveal.visible {
+    max-height: 235px;
+
+    margin-bottom: 7px;
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+.magic-flower-photo {
+    position: relative;
+
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 165px;
+
+    margin: 0 auto 6px;
+
+    object-fit: contain;
+
+    border: 3px solid rgba(255, 215, 150, 0.9);
+    border-radius: 14px;
+
+    box-shadow:
+        0 0 24px rgba(255, 120, 180, 0.45);
+
+    z-index: 2;
+}
+
+
+.magic-flower-reveal p {
+    position: relative;
+
+    margin: 0;
+
+    color: #ffd7e8;
+
+    font-size: 11px;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+
+.magic-flower-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 190px;
+    height: 190px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 210, 90, 0.38),
+            rgba(255, 70, 160, 0.12),
+            transparent 70%
+        );
+
+    filter: blur(15px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FLOWER PARTICLES
+========================================================= */
+
+.magic-flower-particle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    font-size: 18px;
+
+    animation:
+        magicFlowerParticleFly
+        1.2s ease-out forwards;
+}
+
+
+@keyframes magicFlowerParticleFly {
+
+    from {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(0.5);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--flower-x),
+                var(--flower-y)
+            )
+            scale(1.5)
+            rotate(250deg);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #scene-flower-game .scene-inner {
+        padding: 8px;
+    }
+
+    #scene-flower-game h2 {
+        font-size: clamp(23px, 7vw, 31px);
+        margin-bottom: 6px;
+    }
+
+    #scene-flower-game .sub {
+        font-size: 11px;
+        margin-bottom: 7px;
+    }
+
+    .magic-flower-area {
+        width: min(325px, 90vw);
+
+        gap: 8px;
+
+        padding: 10px;
+
+        margin: 3px auto 7px;
+    }
+
+    .magic-flower {
+        height: 60px;
+        font-size: 32px;
+    }
+
+    .magic-flower-message {
+        font-size: 11px;
+    }
+
+    .magic-flower-photo {
+        max-height: 145px;
+    }
+
+    .flower-next-btn {
+        padding: 8px 17px;
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   BUTTERFLY CHASE
+========================================================= */
+
+#scene-butterfly .scene-inner {
+    width: min(94vw, 680px);
+    height: 100%;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden !important;
+}
+
+#scene-butterfly h2 {
+    margin: 0 0 8px;
+}
+
+#scene-butterfly .sub {
+    margin: 0 0 10px;
+}
+
+
+/* =========================================================
+   CHASE AREA
+========================================================= */
+
+.butterfly-game {
+    position: relative;
+
+    width: min(500px, 88vw);
+    height: 300px;
+
+    margin: 4px auto 10px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 120, 190, 0.35);
+    border-radius: 26px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 80, 170, 0.13),
+            rgba(28, 3, 20, 0.82)
+        );
+
+    box-shadow:
+        inset 0 0 35px rgba(255, 80, 170, 0.08),
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+
+/* =========================================================
+   MOVING BUTTERFLIES
+========================================================= */
+
+.chase-butterfly {
+    position: absolute;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 38px;
+
+    cursor: pointer;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    touch-action: manipulation;
+
+    filter:
+        drop-shadow(0 0 8px #ff84c3)
+        drop-shadow(0 0 15px rgba(170, 100, 255, 0.7));
+}
+
+.chase-butterfly:nth-child(1) {
+    left: 8%;
+    top: 12%;
+    animation: butterflyFlyOne 4.5s ease-in-out infinite alternate;
+}
+
+.chase-butterfly:nth-child(2) {
+    left: 38%;
+    top: 15%;
+    animation: butterflyFlyTwo 5s ease-in-out infinite alternate;
+}
+
+.chase-butterfly:nth-child(3) {
+    right: 8%;
+    top: 25%;
+    animation: butterflyFlyThree 4.2s ease-in-out infinite alternate;
+}
+
+.chase-butterfly:nth-child(4) {
+    left: 18%;
+    bottom: 18%;
+    animation: butterflyFlyFour 5.3s ease-in-out infinite alternate;
+}
+
+.chase-butterfly:nth-child(5) {
+    right: 22%;
+    bottom: 15%;
+    animation: butterflyFlyFive 4.7s ease-in-out infinite alternate;
+}
+
+
+@keyframes butterflyFlyOne {
+
+    from {
+        transform:
+            translate(0, 0)
+            rotate(-8deg);
+    }
+
+    to {
+        transform:
+            translate(100px, 55px)
+            rotate(15deg);
+    }
+}
+
+
+@keyframes butterflyFlyTwo {
+
+    from {
+        transform:
+            translate(-40px, 15px)
+            rotate(8deg);
+    }
+
+    to {
+        transform:
+            translate(70px, 100px)
+            rotate(-12deg);
+    }
+}
+
+
+@keyframes butterflyFlyThree {
+
+    from {
+        transform:
+            translate(0, 0)
+            rotate(-10deg);
+    }
+
+    to {
+        transform:
+            translate(-110px, 65px)
+            rotate(12deg);
+    }
+}
+
+
+@keyframes butterflyFlyFour {
+
+    from {
+        transform:
+            translate(0, 0)
+            rotate(8deg);
+    }
+
+    to {
+        transform:
+            translate(150px, -90px)
+            rotate(-12deg);
+    }
+}
+
+
+@keyframes butterflyFlyFive {
+
+    from {
+        transform:
+            translate(0, 0)
+            rotate(-10deg);
+    }
+
+    to {
+        transform:
+            translate(-120px, -75px)
+            rotate(15deg);
+    }
+}
+
+
+/* Captured animation */
+
+.chase-butterfly.butterfly-caught {
+    pointer-events: none;
+
+    animation:
+        butterflyCaught
+        0.55s ease forwards !important;
+}
+
+
+@keyframes butterflyCaught {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.8);
+
+        filter:
+            drop-shadow(0 0 18px white)
+            drop-shadow(0 0 35px #ff64b5);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            scale(0.2)
+            translateY(70px);
+    }
+}
+
+
+/* =========================================================
+   CAPTURED BUTTERFLIES
+========================================================= */
+
+.captured-butterflies {
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 32px;
+
+    margin-bottom: 3px;
+}
+
+
+.captured-butterfly {
+    font-size: 23px;
+
+    opacity: 0.18;
+
+    filter: grayscale(1);
+
+    transform: scale(0.75);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+.captured-butterfly.collected {
+    opacity: 1;
+
+    filter:
+        grayscale(0)
+        drop-shadow(0 0 10px #ff77c0);
+
+    transform: scale(1);
+}
+
+
+.butterfly-counter {
+    min-height: 22px;
+
+    margin: 0 0 7px;
+
+    color: #ffc5e1;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FINISH ANIMATION
+========================================================= */
+
+.butterfly-game.butterflies-complete {
+    opacity: 0;
+
+    transform: scale(0.65);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PHOTO REVEAL
+========================================================= */
+
+.butterfly-reveal {
+    position: relative;
+
+    width: min(260px, 72vw);
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(10px)
+        scale(0.85);
+
+    transition:
+        max-height 0.8s ease,
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.butterfly-reveal.visible {
+    max-height: 250px;
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    margin-bottom: 8px;
+}
+
+
+.butterfly-photo {
+    position: relative;
+
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 180px;
+
+    margin: 0 auto 6px;
+
+    object-fit: contain;
+
+    border: 3px solid rgba(255, 215, 150, 0.9);
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 28px rgba(255, 100, 180, 0.45);
+
+    z-index: 2;
+}
+
+
+.butterfly-reveal p {
+    position: relative;
+
+    margin: 0;
+
+    color: #ffd7e9;
+
+    font-size: 11px;
+
+    z-index: 2;
+}
+
+
+.butterfly-photo-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 220px;
+    height: 220px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 210, 100, 0.35),
+            rgba(255, 75, 170, 0.12),
+            transparent 70%
+        );
+
+    filter: blur(16px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #scene-butterfly .scene-inner {
+        padding: 7px;
+    }
+
+    #scene-butterfly h2 {
+        font-size: clamp(23px, 7vw, 31px);
+        margin-bottom: 6px;
+    }
+
+    #scene-butterfly .sub {
+        margin-bottom: 7px;
+        font-size: 11px;
+    }
+
+    .butterfly-game {
+        width: min(340px, 90vw);
+        height: 260px;
+    }
+
+    .chase-butterfly {
+        width: 54px;
+        height: 54px;
+
+        font-size: 34px;
+    }
+
+    .butterfly-photo {
+        max-height: 155px;
+    }
+}
+
+
+/* =========================================================
+   TORN PHOTOGRAPH
+========================================================= */
+
+#scene-torn-photo .scene-inner {
+    width: min(94vw, 680px);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+
+    overflow: hidden !important;
+}
+
+#scene-torn-photo h2 {
+    margin: 0 0 8px;
+}
+
+#scene-torn-photo .sub {
+    margin: 0 0 10px;
+}
+
+
+/* =========================================================
+   TORN PHOTO BOARD
+========================================================= */
+
+.torn-photo-board {
+    position: relative;
+
+    width: min(420px, 84vw);
+    aspect-ratio: 3 / 2;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    gap: 8px;
+
+    padding: 10px;
+
+    margin: 5px auto 10px;
+
+    border: 1px solid rgba(255, 130, 190, 0.35);
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 80, 160, 0.14),
+            rgba(30, 4, 21, 0.9)
+        );
+
+    box-shadow:
+        inset 0 0 30px rgba(255, 80, 160, 0.08),
+        0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   TORN PIECES
+========================================================= */
+
+.torn-piece {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    background-image: url("6.png");
+
+    background-repeat: no-repeat;
+    background-size: 300% 200%;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+
+    touch-action: manipulation;
+}
+
+
+/* Irregular torn-looking edges */
+
+.torn-piece:nth-child(1) {
+    clip-path:
+        polygon(
+            0 5%,
+            92% 0,
+            100% 13%,
+            94% 100%,
+            5% 93%
+        );
+}
+
+.torn-piece:nth-child(2) {
+    clip-path:
+        polygon(
+            7% 0,
+            95% 6%,
+            100% 90%,
+            88% 100%,
+            0 94%
+        );
+}
+
+.torn-piece:nth-child(3) {
+    clip-path:
+        polygon(
+            3% 8%,
+            100% 0,
+            94% 93%,
+            7% 100%,
+            0 87%
+        );
+}
+
+.torn-piece:nth-child(4) {
+    clip-path:
+        polygon(
+            0 4%,
+            91% 0,
+            100% 10%,
+            95% 96%,
+            8% 100%
+        );
+}
+
+.torn-piece:nth-child(5) {
+    clip-path:
+        polygon(
+            6% 0,
+            100% 7%,
+            93% 100%,
+            0 94%
+        );
+}
+
+.torn-piece:nth-child(6) {
+    clip-path:
+        polygon(
+            3% 5%,
+            94% 0,
+            100% 91%,
+            88% 100%,
+            0 95%
+        );
+}
+
+
+.torn-piece:hover {
+    transform: scale(1.04);
+
+    filter: brightness(1.1);
+
+    box-shadow:
+        0 0 18px rgba(255, 105, 180, 0.45);
+}
+
+
+.torn-piece.selected {
+    transform: scale(0.93);
+
+    outline: 3px solid #ffd56a;
+
+    filter:
+        brightness(1.2)
+        drop-shadow(0 0 12px #ffd56a);
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.torn-photo-message {
+    min-height: 22px;
+
+    margin: 0 0 7px;
+
+    color: #ffc3df;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   COMPLETED PHOTO
+========================================================= */
+
+.torn-photo-board.restored {
+    gap: 0;
+    padding: 0;
+
+    animation:
+        restoredPhotoGlow
+        0.8s ease;
+}
+
+
+.torn-photo-board.restored .torn-piece {
+    clip-path: none;
+    border-radius: 0;
+    pointer-events: none;
+}
+
+
+@keyframes restoredPhotoGlow {
+
+    0% {
+        transform: scale(0.95);
+    }
+
+    50% {
+        transform: scale(1.04);
+
+        box-shadow:
+            0 0 45px rgba(255, 200, 90, 0.7);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   FINAL REVEAL
+========================================================= */
+
+.torn-photo-reveal {
+    position: relative;
+
+    width: min(300px, 75vw);
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(12px)
+        scale(0.85);
+
+    transition:
+        max-height 0.7s ease,
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.torn-photo-reveal.visible {
+    max-height: 260px;
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    margin-bottom: 8px;
+}
+
+
+.torn-full-photo {
+    position: relative;
+
+    display: block;
+
+    max-width: 100%;
+    max-height: 190px;
+
+    width: auto;
+    height: auto;
+
+    margin: 0 auto 6px;
+
+    object-fit: contain;
+
+    border: 3px solid rgba(255, 215, 150, 0.9);
+    border-radius: 14px;
+
+    box-shadow:
+        0 0 25px rgba(255, 100, 175, 0.5);
+
+    z-index: 2;
+}
+
+
+.torn-photo-reveal p {
+    position: relative;
+
+    margin: 0;
+
+    color: #ffd576;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    z-index: 2;
+}
+
+
+.torn-photo-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 220px;
+    height: 220px;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 210, 90, 0.36),
+            rgba(255, 75, 170, 0.12),
+            transparent 70%
+        );
+
+    border-radius: 50%;
+
+    filter: blur(16px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #scene-torn-photo .scene-inner {
+        padding: 8px;
+    }
+
+    #scene-torn-photo h2 {
+        font-size: clamp(23px, 7vw, 31px);
+        margin-bottom: 6px;
+    }
+
+    #scene-torn-photo .sub {
+        font-size: 11px;
+        margin-bottom: 7px;
+    }
+
+    .torn-photo-board {
+        width: min(330px, 88vw);
+        gap: 5px;
+        padding: 7px;
+    }
+
+    .torn-photo-message {
+        font-size: 11px;
+    }
+
+    .torn-full-photo {
+        max-height: 155px;
+    }
+}
+
+/* =========================================================
+   UNTIE THE RIBBON
+========================================================= */
+
+#scene-ribbon .scene-inner {
+    width: min(94vw, 680px);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+
+    overflow: hidden !important;
+}
+
+#scene-ribbon h2 {
+    margin: 0 0 8px;
+}
+
+#scene-ribbon .sub {
+    margin: 0 0 12px;
+}
+
+
+/* =========================================================
+   GIFT / PHOTO AREA
+========================================================= */
+
+.ribbon-gift {
+    position: relative;
+
+    width: min(380px, 82vw);
+    height: 300px;
+
+    margin: 5px auto 10px;
+
+    overflow: hidden;
+
+    border: 2px solid rgba(255, 120, 185, 0.5);
+
+    border-radius: 24px;
+
+    background: #250615;
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(255, 55, 145, 0.2);
+}
+
+
+/* Hidden photo */
+
+.ribbon-photo {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    background: #17030d;
+
+    opacity: 0;
+
+    transform: scale(0.9);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    z-index: 1;
+}
+
+
+.ribbon-gift.opened .ribbon-photo {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* Gift cover */
+
+.ribbon-cover {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #7e174c,
+            #36091f 70%
+        );
+
+    font-size: 90px;
+
+    z-index: 2;
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.ribbon-gift.opened .ribbon-cover {
+    opacity: 0;
+
+    transform: scale(1.2);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   RIBBONS
+========================================================= */
+
+.gift-ribbon {
+    position: absolute;
+
+    border: none;
+    outline: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ff72bc,
+            #cf126e
+        );
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 16px rgba(255, 60, 150, 0.5);
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.35s ease,
+        filter 0.25s ease;
+
+    touch-action: manipulation;
+}
+
+
+.gift-ribbon:hover {
+    filter: brightness(1.2);
+}
+
+
+/* Horizontal ribbon */
+
+.ribbon-one {
+    left: 0;
+    top: 28%;
+
+    width: 100%;
+    height: 45px;
+}
+
+
+.ribbon-one span {
+    font-size: 24px;
+}
+
+
+/* Vertical ribbon */
+
+.ribbon-two {
+    top: 0;
+    left: calc(50% - 24px);
+
+    width: 48px;
+    height: 100%;
+}
+
+
+.ribbon-two span {
+    font-size: 25px;
+}
+
+
+/* Diagonal ribbon */
+
+.ribbon-three {
+    left: -12%;
+    top: 45%;
+
+    width: 125%;
+    height: 42px;
+
+    transform: rotate(-24deg);
+}
+
+
+.ribbon-three span {
+    font-size: 24px;
+}
+
+
+/* Removed ribbon animation */
+
+.gift-ribbon.ribbon-removed {
+    pointer-events: none;
+
+    animation:
+        ribbonFlyAway
+        0.65s ease-in forwards;
+}
+
+
+@keyframes ribbonFlyAway {
+
+    0% {
+        opacity: 1;
+    }
+
+    45% {
+        transform:
+            scale(1.08)
+            rotate(8deg);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateX(220px)
+            rotate(35deg)
+            scale(0.5);
+    }
+}
+
+
+/* =========================================================
+   COUNTER / MESSAGE
+========================================================= */
+
+.ribbon-counter {
+    min-height: 22px;
+
+    margin: 0 0 4px;
+
+    color: #ffc4df;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.ribbon-message {
+    min-height: 22px;
+
+    margin: 0 0 8px;
+
+    color: #ffd472;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.ribbon-particle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    font-size: 18px;
+
+    animation:
+        ribbonParticleFly
+        1.1s ease-out forwards;
+}
+
+
+@keyframes ribbonParticleFly {
+
+    from {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(0.5);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--ribbon-x),
+                var(--ribbon-y)
+            )
+            rotate(220deg)
+            scale(1.5);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #scene-ribbon .scene-inner {
+        padding: 8px;
+    }
+
+    #scene-ribbon h2 {
+        font-size: clamp(23px, 7vw, 31px);
+        margin-bottom: 6px;
+    }
+
+    #scene-ribbon .sub {
+        margin-bottom: 8px;
+        font-size: 11px;
+    }
+
+    .ribbon-gift {
+        width: min(325px, 88vw);
+        height: 270px;
+    }
+
+    .ribbon-cover {
+        font-size: 75px;
+    }
+
+    .ribbon-counter,
+    .ribbon-message {
+        font-size: 11px;
+    }
+}
+
+/* =========================================================
+   HIDDEN HEARTS PHOTO GAME
+========================================================= */
+
+#scene-hidden-hearts .scene-inner {
+    width: min(94vw, 680px);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+
+    overflow: hidden !important;
+}
+
+#scene-hidden-hearts h2 {
+    margin: 0 0 8px;
+}
+
+#scene-hidden-hearts .sub {
+    margin: 0 0 10px;
+}
+
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.hidden-hearts-photo {
+    position: relative;
+
+    width: min(390px, 82vw);
+    height: 320px;
+
+    margin: 5px auto 10px;
+
+    overflow: hidden;
+
+    border: 2px solid rgba(255, 120, 185, 0.45);
+
+    border-radius: 22px;
+
+    background: #200512;
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(255, 60, 150, 0.18);
+}
+
+
+.hidden-hearts-image {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 20px;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   HIDDEN HEARTS
+========================================================= */
+
+.hidden-heart {
+    position: absolute;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    opacity: 0.48;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(0 0 4px #ffffff)
+        drop-shadow(0 0 9px #ff318c);
+
+    animation:
+        hiddenHeartPulse
+        1.4s ease-in-out infinite alternate;
+
+    touch-action: manipulation;
+}
+
+
+/* Different hiding positions */
+
+.heart-one {
+    left: 8%;
+    top: 13%;
+}
+
+.heart-two {
+    right: 11%;
+    top: 27%;
+}
+
+.heart-three {
+    left: 46%;
+    top: 46%;
+}
+
+.heart-four {
+    left: 17%;
+    bottom: 13%;
+}
+
+.heart-five {
+    right: 16%;
+    bottom: 9%;
+}
+
+
+@keyframes hiddenHeartPulse {
+
+    from {
+        opacity: 0.32;
+
+        transform:
+            scale(0.78);
+    }
+
+    to {
+        opacity: 0.72;
+
+        transform:
+            scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   FOUND HEART
+========================================================= */
+
+.hidden-heart.heart-found {
+    pointer-events: none;
+
+    animation:
+        hiddenHeartFound
+        0.55s ease forwards !important;
+}
+
+
+@keyframes hiddenHeartFound {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(2);
+
+        filter:
+            drop-shadow(0 0 12px white)
+            drop-shadow(0 0 30px #ff2585);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            scale(2.8);
+    }
+}
+
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+.hidden-heart-counter {
+    min-height: 24px;
+
+    margin: 0 0 8px;
+
+    color: #ffc2dd;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-shadow:
+        0 0 10px rgba(255, 60, 150, 0.45);
+}
+
+
+/* =========================================================
+   SECRET MESSAGE
+========================================================= */
+
+.hidden-heart-secret {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(45, 3, 25, 0.90),
+            rgba(95, 8, 55, 0.93)
+        );
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        scale(0.85);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s ease;
+
+    z-index: 20;
+}
+
+
+.hidden-heart-secret.visible {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        scale(1);
+}
+
+
+.hidden-heart-secret-content {
+    text-align: center;
+}
+
+
+.secret-heart-icon {
+    margin-bottom: 12px;
+
+    font-size: 55px;
+
+    animation:
+        secretHeartBeat
+        1s ease-in-out infinite;
+}
+
+
+@keyframes secretHeartBeat {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.18);
+    }
+}
+
+
+.hidden-heart-secret p {
+    margin: 0 0 7px;
+
+    color: #ffd6e7;
+
+    font-size: 13px;
+}
+
+
+.hidden-heart-secret strong {
+    color: #ffd26f;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 16px;
+
+    text-shadow:
+        0 0 12px rgba(255, 190, 70, 0.45);
+}
+
+
+/* =========================================================
+   HEART PARTICLES
+========================================================= */
+
+.hidden-heart-particle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    font-size: 17px;
+
+    animation:
+        hiddenHeartParticleFly
+        1s ease-out forwards;
+}
+
+
+@keyframes hiddenHeartParticleFly {
+
+    from {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(0.5);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--heart-x),
+                var(--heart-y)
+            )
+            scale(1.5)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #scene-hidden-hearts .scene-inner {
+        padding: 8px;
+    }
+
+    #scene-hidden-hearts h2 {
+        font-size:
+            clamp(23px, 7vw, 31px);
+
+        margin-bottom: 6px;
+    }
+
+    #scene-hidden-hearts .sub {
+        margin-bottom: 7px;
+
+        font-size: 11px;
+    }
+
+    .hidden-hearts-photo {
+        width:
+            min(330px, 88vw);
+
+        height: 280px;
+    }
+
+    .hidden-heart {
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+    }
+
+    .hidden-heart-counter {
+        font-size: 11px;
+    }
+
+    .hidden-heart-secret strong {
+        font-size: 14px;
+    }
+}
+
+/* =========================================================
+   CONSTELLATION CONNECTION GAME
+========================================================= */
+
+#scene-constellation .scene-inner {
+    width: min(94vw, 680px);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+
+    overflow: hidden !important;
+}
+
+#scene-constellation h2 {
+    margin: 0 0 8px;
+}
+
+#scene-constellation .sub {
+    margin: 0 0 10px;
+}
+
+
+/* =========================================================
+   CONSTELLATION BOARD
+========================================================= */
+
+.constellation-board {
+    position: relative;
+
+    width: min(440px, 86vw);
+    height: 350px;
+
+    margin: 5px auto 10px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(135, 150, 255, 0.42);
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at 50% 48%,
+            rgba(255, 70, 160, 0.15),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(105, 110, 255, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(10, 5, 35, 0.95),
+            rgba(42, 5, 45, 0.94)
+        );
+
+    box-shadow:
+        inset 0 0 45px rgba(100, 110, 255, 0.10),
+        0 15px 45px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Small background stars */
+
+.constellation-board::before {
+    content: "· ✦ · ✧ · ✦ · ✧ · ✦ · ✧ · ✦ ·";
+
+    position: absolute;
+    inset: 20px;
+
+    color: rgba(255, 255, 255, 0.28);
+
+    font-size: 16px;
+    line-height: 70px;
+    letter-spacing: 15px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SVG CONNECTING LINES
+========================================================= */
+
+.constellation-lines {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+.constellation-line {
+    stroke: #ffd86f;
+    stroke-width: 3;
+
+    stroke-linecap: round;
+
+    filter:
+        drop-shadow(0 0 5px #ffd86f)
+        drop-shadow(0 0 10px #ff62b5);
+
+    animation:
+        drawConstellationLine
+        0.55s ease forwards;
+}
+
+
+@keyframes drawConstellationLine {
+
+    from {
+        opacity: 0;
+        stroke-dasharray: 8 12;
+    }
+
+    to {
+        opacity: 1;
+        stroke-dasharray: 1000 0;
+    }
+}
+
+
+/* =========================================================
+   CONSTELLATION STARS
+========================================================= */
+
+.constellation-star {
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    opacity: 0.50;
+
+    filter:
+        drop-shadow(0 0 5px #fff4a0)
+        drop-shadow(0 0 11px #8f8cff);
+
+    z-index: 5;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        filter 0.25s ease;
+
+    animation:
+        constellationStarPulse
+        1.5s ease-in-out infinite alternate;
+
+    touch-action: manipulation;
+}
+
+
+@keyframes constellationStarPulse {
+
+    from {
+        transform: scale(0.85);
+    }
+
+    to {
+        transform: scale(1.10);
+    }
+}
+
+
+/* Current star that should be pressed */
+
+.constellation-star.next-star {
+    opacity: 1;
+
+    transform: scale(1.22);
+
+    filter:
+        drop-shadow(0 0 9px white)
+        drop-shadow(0 0 20px #ffd75e)
+        drop-shadow(0 0 32px #ff56b1);
+}
+
+
+/* Correctly connected star */
+
+.constellation-star.connected {
+    opacity: 1;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 20px #ffd75e);
+
+    animation:
+        connectedStarGlow
+        0.8s ease-in-out infinite alternate;
+}
+
+
+@keyframes connectedStarGlow {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.22);
+    }
+}
+
+
+/* Wrong star */
+
+.constellation-star.wrong-star {
+    animation:
+        wrongConstellationStar
+        0.42s ease;
+}
+
+
+@keyframes wrongConstellationStar {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform:
+            translateX(-7px)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateX(7px)
+            rotate(8deg);
+    }
+
+    75% {
+        transform:
+            translateX(-4px);
+    }
+}
+
+
+/* =========================================================
+   HEART-SHAPED STAR POSITIONS
+========================================================= */
+
+.star-point-1 {
+    left: 45%;
+    top: 78%;
+}
+
+.star-point-2 {
+    left: 24%;
+    top: 60%;
+}
+
+.star-point-3 {
+    left: 14%;
+    top: 33%;
+}
+
+.star-point-4 {
+    left: 25%;
+    top: 16%;
+}
+
+.star-point-5 {
+    left: 45%;
+    top: 32%;
+}
+
+.star-point-6 {
+    right: 22%;
+    top: 16%;
+}
+
+.star-point-7 {
+    right: 12%;
+    top: 34%;
+}
+
+.star-point-8 {
+    right: 22%;
+    top: 60%;
+}
+
+
+/* =========================================================
+   COUNTER AND STATUS
+========================================================= */
+
+.constellation-counter {
+    min-height: 22px;
+
+    margin: 0 0 3px;
+
+    color: #ffd676;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.constellation-status {
+    min-height: 22px;
+
+    margin: 0 0 8px;
+
+    color: #ffc5e1;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   COMPLETION MESSAGE
+========================================================= */
+
+.constellation-complete-message {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 45, 135, 0.30),
+            rgba(15, 5, 35, 0.93) 65%
+        );
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(0.82);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s ease;
+
+    z-index: 20;
+}
+
+
+.constellation-complete-message.visible {
+    opacity: 1;
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+.constellation-heart {
+    margin-bottom: 15px;
+
+    font-size: 75px;
+
+    filter:
+        drop-shadow(0 0 18px #ff348e)
+        drop-shadow(0 0 35px #ff7fbd);
+
+    animation:
+        constellationHeartBeat
+        1s ease-in-out infinite;
+}
+
+
+@keyframes constellationHeartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+.constellation-complete-message p {
+    margin: 0;
+
+    color: #ffd28a;
+
+    font-family:
+        Cinzel,
+        Georgia,
+        serif;
+
+    font-size: 19px;
+
+    text-shadow:
+        0 0 15px rgba(255, 100, 175, 0.6);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #scene-constellation .scene-inner {
+        padding: 7px;
+    }
+
+    #scene-constellation h2 {
+        margin-bottom: 6px;
+
+        font-size:
+            clamp(23px, 7vw, 31px);
+    }
+
+    #scene-constellation .sub {
+        margin-bottom: 7px;
+
+        font-size: 11px;
+    }
+
+    .constellation-board {
+        width: min(335px, 90vw);
+        height: 300px;
+    }
+
+    .constellation-star {
+        width: 44px;
+        height: 44px;
+
+        font-size: 25px;
+    }
+
+    .constellation-counter,
+    .constellation-status {
+        font-size: 11px;
+    }
+
+    .constellation-complete-message p {
+        font-size: 16px;
+    }
+}
+
+
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .scene {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: clamp(22px, 7vw, 30px);
+    }
+
+    .sub {
+        font-size: 11px;
+    }
+
+    .pink-btn {
+        padding: 10px 18px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   SHORT MOBILE SCREENS
+========================================================= */
+
+@media (max-height: 700px) {
+
+    .scene-inner {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    h2 {
+        margin-top: 3px;
+        margin-bottom: 6px;
+    }
+
+    .sub {
+        margin-bottom: 8px;
+    }
+}
+
+
+.december-surprise {
+    margin-top: 12px;
+    color: #ffc4df;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.3px;
+    text-shadow:
+        0 0 10px rgba(255, 62, 157, 0.5);
+}
+
+@media (max-width: 430px) {
+    .december-surprise {
+        font-size: 11px;
+        margin-top: 9px;
+        padding: 0 12px;
+    }
+}
+
+/* =========================================================
+   COIN GAME SHORTCUT - FIRST PAGE ONLY
+========================================================= */
+
+.coin-game-shortcut {
+    position: absolute;
+
+    left: max(18px, env(safe-area-inset-left));
+    bottom: max(14px, env(safe-area-inset-bottom));
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    border: 1px solid #ffd36f;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 32% 28%,
+            #fff0a0,
+            #e9a62e 48%,
+            #8d5005 100%
+        );
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 40;
+
+    box-shadow:
+        0 0 15px rgba(255, 210, 85, 0.55),
+        inset 0 2px 5px rgba(255, 255, 255, 0.5);
+
+    animation:
+        coinShortcutGlow
+        1.4s ease-in-out infinite alternate;
+
+    touch-action: manipulation;
+}
+
+
+@keyframes coinShortcutGlow {
+
+    from {
+        transform: scale(1);
+
+        box-shadow:
+            0 0 10px rgba(255, 210, 85, 0.4);
+    }
+
+    to {
+        transform: scale(1.08);
+
+        box-shadow:
+            0 0 26px rgba(255, 210, 85, 0.8);
+    }
+}
+
+
+/* =========================================================
+   COIN TOSS PAGE
+========================================================= */
+
+#scene-coin-toss .scene-inner {
+    width: min(94vw, 680px);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden !important;
+}
+
+
+#scene-coin-toss h2 {
+    margin: 0 0 8px;
+}
+
+
+#scene-coin-toss .sub {
+    margin: 0 0 22px;
+}
+
+
+/* =========================================================
+   YES / NO COIN
+========================================================= */
+
+.yes-no-coin {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    margin: 10px auto 25px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+
+    filter:
+        drop-shadow(0 18px 24px rgba(0, 0, 0, 0.45))
+        drop-shadow(0 0 18px rgba(255, 205, 75, 0.35));
+
+    touch-action: manipulation;
+}
+
+
+.coin-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.7s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+}
+
+
+/* Show NO side when manually touching coin */
+
+.yes-no-coin.show-no .coin-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* Tossing animation */
+
+.yes-no-coin.tossing .coin-inner {
+    animation:
+        tossYesNoCoin
+        1.8s cubic-bezier(
+            0.22,
+            0.8,
+            0.25,
+            1
+        ) forwards;
+}
+
+
+@keyframes tossYesNoCoin {
+
+    0% {
+        transform:
+            translateY(0)
+            rotateY(0deg)
+            rotateX(0deg);
+    }
+
+    30% {
+        transform:
+            translateY(-145px)
+            rotateY(720deg)
+            rotateX(180deg)
+            scale(1.08);
+    }
+
+    65% {
+        transform:
+            translateY(-35px)
+            rotateY(1440deg)
+            rotateX(360deg);
+    }
+
+    84% {
+        transform:
+            translateY(-8px)
+            rotateY(1800deg)
+            rotateX(360deg);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            rotateY(2160deg)
+            rotateX(360deg);
+    }
+}
+
+
+/* =========================================================
+   COIN FACES
+========================================================= */
+
+.coin-face {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 7px double rgba(255, 246, 180, 0.8);
+    border-radius: 50%;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    overflow: hidden;
+}
+
+
+.coin-face::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border: 2px dashed rgba(105, 55, 0, 0.35);
+    border-radius: 50%;
+}
+
+
+.coin-yes {
+    background:
+        radial-gradient(
+            circle at 34% 28%,
+            #fff9bb,
+            #ffd55f 38%,
+            #d68b15 72%,
+            #8c4b02 100%
+        );
+
+    color: #712f00;
+}
+
+
+.coin-no {
+    background:
+        radial-gradient(
+            circle at 34% 28%,
+             #fff9bb,
+            #ffd55f 38%,
+            #d68b15 72%,
+            #8c4b02 100%
+        );
+
+    color: #712f00;
+
+    transform: rotateY(180deg);
+}
+
+
+.coin-face span {
+    position: relative;
+
+    font-family:
+        Cinzel,
+        Georgia,
+        serif;
+
+    font-size: 37px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    z-index: 2;
+}
+
+
+.coin-face small {
+    position: relative;
+
+    margin-top: 5px;
+
+    font-size: 28px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.coin-toss-result {
+    min-height: 29px;
+
+    margin: 0 0 14px;
+
+    color: #ffd27b;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-align: center;
+
+    text-shadow:
+        0 0 12px rgba(255, 190, 70, 0.55);
+}
+
+
+.coin-toss-result.yes-result {
+    animation:
+        yesResultGlow
+        0.8s ease-in-out infinite alternate;
+}
+
+
+@keyframes yesResultGlow {
+
+    from {
+        transform: scale(1);
+
+        text-shadow:
+            0 0 10px rgba(255, 190, 70, 0.45);
+    }
+
+    to {
+        transform: scale(1.06);
+
+        text-shadow:
+            0 0 25px rgba(255, 215, 110, 0.9);
+    }
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.coin-back-btn {
+    margin-top: 12px;
+
+    padding: 7px 14px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #e9afca;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+.coin-back-btn:hover {
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255, 80, 160, 0.7);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .coin-game-shortcut {
+        width: 40px;
+        height: 40px;
+
+        left: max(12px, env(safe-area-inset-left));
+        bottom: max(12px, env(safe-area-inset-bottom));
+
+        font-size: 21px;
+    }
+
+    .yes-no-coin {
+        width: 160px;
+        height: 160px;
+
+        margin-bottom: 20px;
+    }
+
+    .coin-face span {
+        font-size: 31px;
+    }
+
+    .coin-face small {
+        font-size: 24px;
+    }
+
+    .coin-toss-result {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   UNIVERSAL BACK BUTTON
+========================================================= */
+
+.scene-back-btn {
+    position: absolute;
+
+    top: max(18px, env(safe-area-inset-top));
+    left: max(18px, env(safe-area-inset-left));
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 120, 185, 0.65);
+    border-radius: 50%;
+
+    background: rgba(45, 5, 28, 0.88);
+
+    color: white;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 0 18px rgba(255, 60, 150, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+
+    touch-action: manipulation;
+}
+
+.scene-back-btn:hover {
+    transform: scale(1.08);
+
+    background: #8f174f;
+
+    box-shadow:
+        0 0 25px rgba(255, 70, 160, 0.65);
+}
+
+@media (max-width: 430px) {
+
+    .scene-back-btn {
+        top: max(10px, env(safe-area-inset-top));
+        left: max(10px, env(safe-area-inset-left));
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+    }
+}
+
+/* =========================================================
+   MOBILE SAFE AREA
+========================================================= */
+
+body,
+#app,
+main {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.scene {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.scene-inner {
+    padding-top:
+        max(12px, env(safe-area-inset-top));
+
+    padding-right:
+        max(12px, env(safe-area-inset-right));
+
+    padding-bottom:
+        max(12px, env(safe-area-inset-bottom));
+
+    padding-left:
+        max(12px, env(safe-area-inset-left));
+}
+
+.music {
+    right:
+        max(18px, env(safe-area-inset-right));
+
+    bottom:
+        max(14px, env(safe-area-inset-bottom));
+}
+
+/* =========================================================
+   EXTRA SHORT PHONE SUPPORT
+========================================================= */
+
+@media (max-width: 600px) and (max-height: 700px) {
+
+    .scene {
+        padding: 6px;
+    }
+
+    .scene-inner {
+        justify-content: flex-start;
+        padding-top:
+            max(48px, env(safe-area-inset-top));
+        padding-bottom:
+            max(10px, env(safe-area-inset-bottom));
+    }
+
+    h2 {
+        font-size:
+            clamp(20px, 6.5vw, 27px);
+    }
+
+    .sub {
+        margin-bottom: 6px;
+    }
+
+    .ribbon-gift {
+        height: 220px;
+    }
+
+    .hidden-hearts-photo {
+        height: 230px;
+    }
+
+    .falling-stars-area {
+        height: 225px;
+    }
+
+    .butterfly-game {
+        height: 220px;
+    }
+
+    .constellation-board {
+        height: 250px;
+    }
+
+    .heart-safe {
+        height: 245px;
+    }
+
+    .scratch-card {
+        width: min(280px, 75vw);
+    }
+}

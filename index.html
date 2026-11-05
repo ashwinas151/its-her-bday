@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>  <title>POV: It's Her Birthday 💖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="stars"></div>
+
+  <main id="app">
+
+    <!-- 1. Gift -->
+    <section class="scene active" id="scene-gift">
+
+      <div class="scene-inner">
+        <button
+    type="button"
+    class="coin-game-shortcut"
+    id="coinGameShortcut"
+    aria-label="Open coin toss game"
+>
+    🪙
+</button>
+          <div class="top-title">POV: IT'S HER BIRTHDAY</div>
+        <h2>A Little Surprise 🎁</h2>
+        <p class="sub">Something special is waiting for you...</p>
+        <button class="gift" id="giftBtn" aria-label="Open gift">
+          <span class="lid"></span><span class="box"></span><span class="ribbon"></span>
+          <span class="bow">🎀</span>
+        </button>
+        <p class="hint">Tap the gift to open it 🎁 Gift unlocks when the baby Born</p>
+        <div id="countdown" class="countdown"></div>
+        <p class="december-surprise">
+    Keep December 6th free… something unexpected is waiting for you. 💖✨
+</p>
+        <p id="giftMessage" class="gift-message"></p>
+        
+      </div>
+    </section>
+
+    <!-- =====================================================
+     YES / NO COIN TOSS GAME
+===================================================== -->
+
+<section class="scene" id="scene-coin-toss">
+
+    <div class="scene-inner coin-toss-inner">
+
+        <h2>Let Fate Decide 🪙</h2>
+
+        <p class="sub" id="coinTossHint">
+            Tap the coin to see both sides, then toss it ✨
+        </p>
+
+        <div
+            class="yes-no-coin"
+            id="yesNoCoin"
+            role="button"
+            tabindex="0"
+            aria-label="Yes or No coin"
+        >
+
+            <div class="coin-inner">
+
+                <div class="coin-face coin-yes">
+                    <span>YES</span>
+                    <small>💖</small>
+                </div>
+
+                <div class="coin-face coin-no">
+                    <span>NO</span>
+                    <small>🥺</small>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p
+            class="coin-toss-result"
+            id="coinTossResult"
+        >
+            YES or NO... what will fate choose?
+        </p>
+
+        <button
+            type="button"
+            class="pink-btn"
+            id="tossCoinBtn"
+        >
+            Toss the Coin 🪙
+        </button>
+
+        <button
+            type="button"
+            class="coin-back-btn"
+            id="coinBackBtn"
+        >
+            ← Back to Gift
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- 2. Password -->
+    <section class="scene" id="scene-password">
+      <div class="scene-inner">
+        <h2>Enter The Secret Code 🔐</h2>
+        <p class="sub">Hint: something only you would know...</p>
+        <div class="code-box">
+          <div id="codeDots" class="dots"><i></i><i></i><i></i><i></i></div>
+          <div class="keypad" id="keypad">
+            <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+            <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+            <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+            <button data-key="clear">⌫</button><button data-key="0">0</button><button data-key="enter">✓</button>
+          </div>
+          <p id="codeMessage" class="error"></p>
+        </div>
+      </div>
+    </section>
+
+<!-- 22nd Birthday Candle Game -->
+<section class="scene" id="scene-candles">
+
+    <div class="scene-inner">
+
+        <h2>Light Up 22 ✨</h2>
+
+        <p class="sub" id="candleHint">
+            Tap both number candles to light them 🕯️
+        </p>
+
+        <div class="birthday-22">
+
+            <!-- First 2 -->
+            <button
+                class="number-candle"
+                type="button"
+                aria-label="Light first number 2 candle"
+            >
+                <span class="number-flame"></span>
+                <span class="number-wick"></span>
+                <span class="candle-number">2</span>
+            </button>
+
+            <!-- Second 2 -->
+            <button
+                class="number-candle"
+                type="button"
+                aria-label="Light second number 2 candle"
+            >
+                <span class="number-flame"></span>
+                <span class="number-wick"></span>
+                <span class="candle-number">2</span>
+            </button>
+
+        </div>
+
+        <p
+            class="candle-counter"
+            id="candleCounter"
+        >
+            🔥 0 / 2 candles lit
+        </p>
+
+        <div
+            class="wish-reveal"
+            id="wishReveal"
+        >
+            
+
+            <h3>
+                Now make your wish...
+            </h3>
+
+            <p>
+                Close your eyes and wish for something beautiful 💗
+            </p>
+        </div>
+
+        <button
+            class="pink-btn"
+            id="blowCandlesBtn"
+            type="button"
+            style="display:none;"
+        >
+            💨 Blow The Candles
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- 3. Cake -->
+    <section class="scene" id="scene-cake">
+      <div class="scene-inner">
+        <h2>Happy Birthday, Cutiecake! 🎂</h2>
+        <p class="sub">
+    Your wish has been made... now let's celebrate! ✨
+</p>
+        <div class="cake">
+          <div class="flames"><b></b><b></b><b></b></div>
+          <div class="tier top"></div>
+          <div class="tier bottom"></div>
+          <div class="plate"></div>
+        </div>
+<button class="pink-btn" id="cakeBtn">
+    Continue The Celebration 💖
+</button>      </div>
+    </section>
+
+<!-- =====================================================
+     UNTIE THE RIBBON
+===================================================== -->
+
+<section class="scene" id="scene-ribbon">
+
+    <div class="scene-inner ribbon-scene-inner">
+
+        <h2>Untie the Ribbon 🎀</h2>
+
+        <p class="sub" id="ribbonHint">
+            Remove each ribbon to discover what's hiding underneath 💖
+        </p>
+
+        <div class="ribbon-gift" id="ribbonGift">
+
+            <img
+                src="7.png"
+                alt="Hidden surprise"
+                class="ribbon-photo"
+            >
+
+            <div class="ribbon-cover" id="ribbonCover">
+                🎁
+            </div>
+
+            <button
+                type="button"
+                class="gift-ribbon ribbon-one"
+                data-ribbon="1"
+                aria-label="Remove first ribbon"
+            >
+                <span>🎀</span>
+            </button>
+
+            <button
+                type="button"
+                class="gift-ribbon ribbon-two"
+                data-ribbon="2"
+                aria-label="Remove second ribbon"
+            >
+                <span>🎀</span>
+            </button>
+
+            <button
+                type="button"
+                class="gift-ribbon ribbon-three"
+                data-ribbon="3"
+                aria-label="Remove third ribbon"
+            >
+                <span>🎀</span>
+            </button>
+
+        </div>
+
+        <p class="ribbon-counter" id="ribbonCounter">
+            🎀 3 ribbons remaining
+        </p>
+
+        <p class="ribbon-message" id="ribbonMessage">
+            Start with any ribbon ✨
+        </p>
+
+        <button
+            type="button"
+            class="pink-btn"
+            id="ribbonNextBtn"
+            style="display:none;"
+        >
+            Continue to Memories 📸
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- 4. Memory card -->
+    <section class="scene" id="scene-memory">
+      <div class="scene-inner">
+        <h2>Our Memories 📸</h2>
+        <p class="sub">A tiny piece of a beautiful memory...</p>
+        <div class="memory-card">
+          <img src="4.png" alt="Memory photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="image-placeholder">YOUR PHOTO 1</div>
+          <div class="memory-caption">A moment worth keeping forever ❤️</div>
+        </div>
+        <button class="pink-btn" data-next="scene-flower-game">Pick a Flower 🌸</button>
+      </div>
+    </section>
+
+<!-- =====================================================
+     PICK THE MAGIC FLOWER
+===================================================== -->
+
+<section class="scene" id="scene-flower-game">
+
+    <div class="scene-inner flower-game-inner">
+
+        <h2>Pick the Magic Flower 🌸</h2>
+
+        <p class="sub" id="flowerGameHint">
+            One flower is hiding a little surprise... 💖
+        </p>
+
+
+        <div class="magic-flower-area" id="magicFlowerArea">
+
+            <button
+                type="button"
+                class="magic-flower"
+                data-flower="0"
+            >
+                🌷
+            </button>
+
+            <button
+                type="button"
+                class="magic-flower"
+                data-flower="1"
+            >
+                🌸
+            </button>
+
+            <button
+                type="button"
+                class="magic-flower"
+                data-flower="2"
+            >
+                🌹
+            </button>
+
+            <button
+                type="button"
+                class="magic-flower"
+                data-flower="3"
+            >
+                🌺
+            </button>
+
+            <button
+                type="button"
+                class="magic-flower"
+                data-flower="4"
+            >
+                🌼
+            </button>
+
+            <button
+                type="button"
+                class="magic-flower"
+                data-flower="5"
+            >
+                🪷
+            </button>
+
+        </div>
+
+
+        <p
+            class="magic-flower-message"
+            id="magicFlowerMessage"
+        >
+            Choose carefully... 🌷
+        </p>
+
+
+        <div
+            class="magic-flower-reveal"
+            id="magicFlowerReveal"
+        >
+
+            <div class="magic-flower-glow"></div>
+
+            <img
+                src="3.png"
+                class="magic-flower-photo"
+                alt="Magic flower surprise"
+            >
+
+            <p>
+                You found the magic flower! 🌸💖
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="pink-btn flower-next-btn"
+            id="flowerNextBtn"
+            style="display:none;"
+        >
+            Continue to Balloons 🎈
+        </button>
+
+    </div>
+
+</section>
+
+
+    <!-- 5. Balloons -->
+    <section class="scene" id="scene-balloons">
+      <div class="scene-inner">
+        <h2>Pop The Balloons 🎈</h2>
+        <p class="sub">Pop them all to unlock the next surprise!</p>
+        <div class="balloon-area" id="balloonArea">
+          <button class="balloon b1">💗</button>
+          <button class="balloon b2">💙</button>
+          <button class="balloon b3">💚</button>
+          <button class="balloon b4">💜</button>
+          <button class="balloon b5">💛</button>
+          <button class="balloon b6">🩷</button>
+        </div>
+        <p id="balloonCount" class="counter">6 balloons left</p>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+     HIDDEN HEARTS PHOTO GAME
+===================================================== -->
+
+<section class="scene" id="scene-hidden-hearts">
+
+    <div class="scene-inner hidden-hearts-inner">
+
+        <h2>Find the Hidden Hearts ❤️</h2>
+
+        <p class="sub" id="hiddenHeartHint">
+            Five tiny hearts are hiding in this memory... can you find them? ✨
+        </p>
+
+        <div class="hidden-hearts-photo" id="hiddenHeartsPhoto">
+
+
+            <img
+    src="9.jpg"
+    class="hidden-hearts-image"
+    alt="Hidden hearts memory"
+>
+            <button
+                type="button"
+                class="hidden-heart heart-one"
+                aria-label="Hidden heart 1"
+            >
+                ❤️
+            </button>
+
+            <button
+                type="button"
+                class="hidden-heart heart-two"
+                aria-label="Hidden heart 2"
+            >
+                ❤️
+            </button>
+
+            <button
+                type="button"
+                class="hidden-heart heart-three"
+                aria-label="Hidden heart 3"
+            >
+                ❤️
+            </button>
+
+            <button
+                type="button"
+                class="hidden-heart heart-four"
+                aria-label="Hidden heart 4"
+            >
+                ❤️
+            </button>
+
+            <button
+                type="button"
+                class="hidden-heart heart-five"
+                aria-label="Hidden heart 5"
+            >
+                ❤️
+            </button>
+
+            <div
+                class="hidden-heart-secret"
+                id="hiddenHeartSecret"
+            >
+                <div class="hidden-heart-secret-content">
+
+                    <div class="secret-heart-icon">
+                        💖
+                    </div>
+
+                    <p>
+                        You found every little heart...
+                    </p>
+
+                    <strong>
+                        But my favorite one was always you ❤️
+                    </strong>
+
+                </div>
+            </div>
+
+        </div>
+
+        <p
+            class="hidden-heart-counter"
+            id="hiddenHeartCounter"
+        >
+            0/5 little hearts found ❤️
+        </p>
+
+        <button
+            type="button"
+            class="pink-btn"
+            id="hiddenHeartNextBtn"
+            style="display:none;"
+        >
+            Continue to the Heart Vault 🔐
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Heart Combination Safe -->
+<section class="scene" id="scene-heart-safe">
+
+    <div class="scene-inner">
+
+        <h2>Unlock The Heart Vault 🔐💖</h2>
+
+        <p class="sub">
+            Find the secret combination to unlock the next memory...
+        </p>
+
+        <p class="safe-clue">
+    143 &nbsp; | &nbsp;
+    MAY 25 &nbsp; | &nbsp;
+    You are my _ in nyt &nbsp; | &nbsp;
+    You my dear
+</p>
+
+        <div class="heart-safe" id="heartSafe">
+
+            <div class="safe-door" id="safeDoor">
+
+                <div class="safe-title">
+                    SECRET VAULT
+                </div>
+
+                <div class="safe-dials">
+
+                    <button
+                        type="button"
+                        class="safe-dial"
+                        data-dial="0"
+                    >
+                        ❤️
+                    </button>
+
+                    <button
+                        type="button"
+                        class="safe-dial"
+                        data-dial="1"
+                    >
+                        ❤️
+                    </button>
+
+                    <button
+                        type="button"
+                        class="safe-dial"
+                        data-dial="2"
+                    >
+                        ❤️
+                    </button>
+
+                    <button
+                        type="button"
+                        class="safe-dial"
+                        data-dial="3"
+                    >
+                        ❤️
+                    </button>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="safe-unlock-btn"
+                    id="safeUnlockBtn"
+                >
+                    🔐 Unlock
+                </button>
+
+                <p
+                    class="safe-message"
+                    id="safeMessage"
+                ></p>
+
+            </div>
+
+
+            <!-- Hidden treasure -->
+<div
+    class="safe-treasure"
+    id="safeTreasure"
+>
+
+    <div class="safe-glow"></div>
+
+    <img
+        class="safe-treasure-photo"
+        src="10.png"
+        alt="Hidden memory"
+    >
+
+    <p>
+        You found another little piece
+        of the surprise 💖
+    </p>
+
+</div>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="pink-btn"
+            id="safeNextBtn"
+            style="display:none;"
+        >
+            Continue to Puzzle 🧩
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- 6. Image Puzzle -->
+<section class="scene" id="scene-puzzle">
+  <div class="scene-inner">
+
+    <h2>Birthday Puzzle 🧩</h2>
+    <p class="sub">Put the image pieces in the right order.</p>
+
+    <div class="puzzle" id="puzzle">
+      <button type="button" aria-label="Puzzle piece 1"></button>
+      <button type="button" aria-label="Puzzle piece 2"></button>
+      <button type="button" aria-label="Puzzle piece 3"></button>
+
+      <button type="button" aria-label="Puzzle piece 4"></button>
+      <button type="button" aria-label="Puzzle piece 5"></button>
+      <button type="button" aria-label="Puzzle piece 6"></button>
+
+      <button type="button" aria-label="Puzzle piece 7"></button>
+      <button type="button" aria-label="Puzzle piece 8"></button>
+      <button type="button" aria-label="Puzzle piece 9"></button>
+    </div>
+    <p id="puzzleMessage" class="success"></p>
+
+<button
+    id="puzzleNextBtn"
+    class="pink-btn"
+    style="display:none;"
+>
+    🎁 Reveal Surprise
+</button>
+
+  </div>
+</section>
+<!-- Envelope Seal Game -->
+<section class="scene" id="scene-envelope">
+
+    <div class="scene-inner">
+
+        <h2>A Sealed Secret 💌</h2>
+
+        <p class="sub" id="envelopeHint">
+            Tap the wax seal three times to open it ❤️
+        </p>
+
+        <div class="envelope-game" id="envelopeGame">
+
+            <div class="envelope-letter" id="envelopeLetter">
+
+                <img
+                    src="11.jpg"
+                    alt="Hidden memory"
+                    class="envelope-photo"
+                >
+
+                <p>
+                    Some surprises are worth opening slowly... 💗
+                </p>
+
+            </div>
+
+            <div class="envelope-body">
+
+                <div class="envelope-back"></div>
+
+                <div class="envelope-paper"></div>
+
+                <div class="envelope-flap"></div>
+
+                <div
+                    class="wax-seal"
+                    id="waxSeal"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Break the wax seal"
+                >
+                    ❤️
+                </div>
+
+                <div class="seal-crack seal-crack-one"></div>
+                <div class="seal-crack seal-crack-two"></div>
+
+            </div>
+
+        </div>
+
+        <p
+            class="seal-counter"
+            id="sealCounter"
+        >
+            Seal strength: 3 ❤️
+        </p>
+
+        <button
+            class="pink-btn envelope-next-btn"
+            id="envelopeNextBtn"
+            type="button"
+            style="display:none;"
+        >
+            Keep Going ❤️
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Scratch Card -->
+<section class="scene" id="scene-scratch">
+
+    <div class="scene-inner">
+
+        <h2>Scratch The Card! ✨</h2>
+
+        <p class="sub">
+            Scratch to reveal your surprise 💗
+        </p>
+
+        <div class="scratch-card">
+
+            <img
+                id="scratchImage"
+                src="5.jpg"
+                alt="Scratch surprise"
+            >
+
+            <canvas
+                id="scratchCanvas"
+                width="600"
+                height="600"
+            ></canvas>
+
+        </div>
+
+        <button
+            class="pink-btn"
+            id="scratchNextBtn"
+            type="button"
+            style="display:none;"
+        >
+            Continue 💗
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- Catch the Falling Stars -->
+<section class="scene" id="scene-stars-game">
+
+    <div class="scene-inner stars-game-inner">
+
+        <h2>Catch the Falling Stars ⭐</h2>
+
+        <p class="sub">
+            Catch 22 magical stars and collect your wishes ✨
+        </p>
+
+        <p
+            class="star-game-counter"
+            id="starGameCounter"
+        >
+            ⭐ 0 / 22 wishes collected
+        </p>
+
+        <div
+            class="falling-stars-area"
+            id="fallingStarsArea"
+        >
+            <p
+                class="stars-game-message"
+                id="starsGameMessage"
+            >
+                Tap the falling stars before they disappear! 💫
+            </p>
+        </div>
+
+        <button
+            class="pink-btn stars-next-btn"
+            id="starsNextBtn"
+            type="button"
+            style="display:none;"
+        >
+            Continue The Surprise 💖
+        </button>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TORN PHOTOGRAPH
+===================================================== -->
+
+<section class="scene" id="scene-torn-photo">
+
+    <div class="scene-inner torn-photo-inner">
+
+        <h2>Restore the Memory 🧩</h2>
+
+        <p class="sub" id="tornPhotoHint">
+            Tap two torn pieces to swap them and restore the memory 💖
+        </p>
+
+        <div class="torn-photo-board" id="tornPhotoBoard">
+
+            <button type="button" class="torn-piece" data-value="1"></button>
+
+            <button type="button" class="torn-piece" data-value="2"></button>
+
+            <button type="button" class="torn-piece" data-value="3"></button>
+
+            <button type="button" class="torn-piece" data-value="4"></button>
+
+            <button type="button" class="torn-piece" data-value="5"></button>
+
+            <button type="button" class="torn-piece" data-value="6"></button>
+
+        </div>
+
+        <p
+            class="torn-photo-message"
+            id="tornPhotoMessage"
+        >
+            The memory is waiting to be restored... ✨
+        </p>
+
+        <div
+            class="torn-photo-reveal"
+            id="tornPhotoReveal"
+        >
+
+            <div class="torn-photo-glow"></div>
+
+            <img
+                src="6.png"
+                alt="Restored memory"
+                class="torn-full-photo"
+            >
+
+            <p>
+                ❤️ Memory Restored
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="pink-btn"
+            id="tornPhotoNextBtn"
+            style="display:none;"
+        >
+            Continue 💖
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONSTELLATION CONNECTION GAME
+===================================================== -->
+
+<section class="scene" id="scene-constellation">
+
+    <div class="scene-inner constellation-inner">
+
+        <h2>Connect Our Stars 🌙</h2>
+
+        <p class="sub" id="constellationHint">
+            Tap the glowing stars in the correct order ✨
+        </p>
+
+        <div
+            class="constellation-board"
+            id="constellationBoard"
+        >
+
+            <svg
+                class="constellation-lines"
+                id="constellationLines"
+                viewBox="0 0 400 320"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            ></svg>
+
+            <button
+                type="button"
+                class="constellation-star star-point-1"
+                data-order="1"
+                aria-label="Constellation star 1"
+            >
+                ⭐
+            </button>
+
+            <button
+                type="button"
+                class="constellation-star star-point-2"
+                data-order="2"
+                aria-label="Constellation star 2"
+            >
+                ⭐
+            </button>
+
+            <button
+                type="button"
+                class="constellation-star star-point-3"
+                data-order="3"
+                aria-label="Constellation star 3"
+            >
+                ⭐
+            </button>
+
+            <button
+                type="button"
+                class="constellation-star star-point-4"
+                data-order="4"
+                aria-label="Constellation star 4"
+            >
+                ⭐
+            </button>
+
+            <button
+                type="button"
+                class="constellation-star star-point-5"
+                data-order="5"
+                aria-label="Constellation star 5"
+            >
+                ⭐
+            </button>
+
+            <button
+                type="button"
+                class="constellation-star star-point-6"
+                data-order="6"
+                aria-label="Constellation star 6"
+            >
+                ⭐
+            </button>
+
+            <button
+                type="button"
+                class="constellation-star star-point-7"
+                data-order="7"
+                aria-label="Constellation star 7"
+            >
+                ⭐
+            </button>
+
+            <button
+                type="button"
+                class="constellation-star star-point-8"
+                data-order="8"
+                aria-label="Constellation star 8"
+            >
+                ⭐
+            </button>
+
+            <div
+                class="constellation-complete-message"
+                id="constellationCompleteMessage"
+            >
+                <div class="constellation-heart">
+                    ❤️
+                </div>
+
+                <p>
+                    One more surprise is waiting…
+                </p>
+            </div>
+
+        </div>
+
+        <p
+            class="constellation-counter"
+            id="constellationCounter"
+        >
+            ⭐ 0 / 8 stars connected
+        </p>
+
+        <p
+            class="constellation-status"
+            id="constellationStatus"
+        >
+            Begin with the glowing first star 💫
+        </p>
+
+        <button
+            type="button"
+            class="pink-btn"
+            id="constellationNextBtn"
+            style="display:none;"
+        >
+            Open One More Surprise 💝
+        </button>
+
+    </div>
+
+</section>
+    <!-- 7. Last surprise -->
+    <section class="scene" id="scene-surprise">
+      <div class="scene-inner">
+        <h2>One Last Surprise 💝</h2>
+        <p class="sub">Because one memory is never enough.</p>
+        <div class="big-photo">
+          <img src="88.jpg" alt="Special photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="image-placeholder">YOUR SPECIAL PHOTO</div>
+        </div>
+        <button class="pink-btn" data-next="scene-final-photo">Open It ❤️</button>
+      </div>
+    </section>
+
+    <!-- 8. Final photo -->
+    <section class="scene" id="scene-final-photo">
+      <div class="scene-inner">
+        <h2>You Make Life Beautiful ✨</h2>
+        <div class="big-photo final-photo">
+          <img src="222.jpg" alt="Final photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="image-placeholder">YOUR FINAL PHOTO</div>
+        </div>
+<button class="pink-btn" data-next="scene-butterfly">
+    Catch the Butterflies 🦋
+</button>
+      </div>
+    </section>
+
+<!-- =====================================================
+     BUTTERFLY CHASE
+===================================================== -->
+
+<section class="scene" id="scene-butterfly">
+
+    <div class="scene-inner butterfly-scene-inner">
+
+        <h2>Butterfly Chase 🦋</h2>
+
+        <p class="sub" id="butterflyHint">
+            Catch all the butterflies before they flutter away ✨
+        </p>
+
+        <div
+            class="butterfly-game"
+            id="butterflyGame"
+        >
+
+            <button
+                type="button"
+                class="chase-butterfly butterfly-one"
+            >
+                🦋
+            </button>
+
+            <button
+                type="button"
+                class="chase-butterfly butterfly-two"
+            >
+                🦋
+            </button>
+
+            <button
+                type="button"
+                class="chase-butterfly butterfly-three"
+            >
+                🦋
+            </button>
+
+            <button
+                type="button"
+                class="chase-butterfly butterfly-four"
+            >
+                🦋
+            </button>
+
+            <button
+                type="button"
+                class="chase-butterfly butterfly-five"
+            >
+                🦋
+            </button>
+
+        </div>
+
+
+        <div class="captured-butterflies">
+
+            <span class="captured-butterfly">🦋</span>
+            <span class="captured-butterfly">🦋</span>
+            <span class="captured-butterfly">🦋</span>
+            <span class="captured-butterfly">🦋</span>
+            <span class="captured-butterfly">🦋</span>
+
+        </div>
+
+
+        <p
+            class="butterfly-counter"
+            id="butterflyCounter"
+        >
+            🦋 0 / 5 captured
+        </p>
+
+
+        <div
+            class="butterfly-reveal"
+            id="butterflyReveal"
+        >
+
+            <div class="butterfly-photo-glow"></div>
+
+            <img
+                src="1_1.jpg"
+                alt="Butterfly surprise"
+                class="butterfly-photo"
+            >
+
+            <p>
+                Every little butterfly led you here 💖
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="pink-btn"
+            id="butterflyNextBtn"
+            style="display:none;"
+        >
+            Read My Letter 💌
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- 9. Letter -->
+    <section class="scene" id="scene-letter">
+      <div class="scene-inner">
+        <h2>A Letter Just For You 💌</h2>
+        <article class="letter">
+          <p>Happy Birthday, my favorite person. ❤️</p>
+          <p>Today is a reminder of how lucky the world is to have you in it.</p>
+          <p>Thank you for every smile, every little conversation, every memory and every moment that made ordinary days feel special.</p>
+          <p>I hope this new chapter brings you peace, laughter, beautiful adventures and everything your heart quietly wishes for.</p>
+          <p>Keep shining exactly the way you do. You deserve so much happiness.</p>
+          <p class="signature">With all my love,<br><strong>Forever yours ❤️</strong></p>
+        </article>
+        <button class="pink-btn" data-next="scene-end">One More Thing ✨</button>
+      </div>
+    </section>
+
+    <!-- 10. End -->
+    <section class="scene" id="scene-end">
+      <div class="scene-inner end">
+        <div class="big-heart">❤️</div>
+        <h2>Happy Birthday,<br><em>Beautiful.</em></h2>
+        <p>May every year ahead be softer, brighter and more beautiful than the last.</p>
+        <div class="sparkle-line">✦ · ✧ · ✦</div>
+      </div>
+    </section>
+
+  </main>
+<button type="button" class="music" id="musicBtn">🔇</button>
+
+<!-- BEFORE COUNTDOWN COMPLETES: Muthu Mazhaiye -->
+<audio
+    id="countdownAudio"
+    loop
+    preload="auto"
+    src="Muthu Mazhaiye Muthu Mazhaiye -Downringtone.com.mp3">
+</audio>
+
+<!-- AFTER COUNTDOWN COMPLETES: Sidu Sidu -->
+<audio
+    id="musicAudio"
+    loop
+    preload="auto"
+    src="Sidu_Sidu_-_Video_Song__Romeo__Vijay_Antony_Mirnalini__Barath_Dhanasekar__Vinaya.mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
