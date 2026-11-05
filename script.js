@@ -299,7 +299,7 @@ if (audio) {
 */
 
 const targetDate =
-    new Date("2026-11-05T17:49:00+05:30").getTime();
+    new Date("2026-12-06T00:00:00+05:30").getTime();
 
 const countdown =
     document.getElementById("countdown");
@@ -747,7 +747,7 @@ if (coinBackBtn) {
    PASSWORD
 ========================================================= */
 
-const secret = "4487";
+const secret = "4478";
 
 let entered = "";
 
